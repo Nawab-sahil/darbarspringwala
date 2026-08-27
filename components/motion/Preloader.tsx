@@ -18,7 +18,7 @@ export default function Preloader() {
 
     // Dynamic counter from 0 to 100
     let start = 0;
-    const duration = 1500; // 1.5s total loading duration
+    const duration = 3000; // 3.0s total loading duration
     const stepTime = Math.floor(duration / 100);
 
     const timer = setInterval(() => {
