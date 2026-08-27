@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 301 Redirects for legacy/SEO URLs to match the dynamic products routes
+  RewriteRule ^compression-springs/?$ products/compression-spring/ [R=301,L]
+  RewriteRule ^extension-springs/?$ products/extension-tension-spring/ [R=301,L]
+  RewriteRule ^torsion-springs/?$ products/torsion-spring/ [R=301,L]
+  RewriteRule ^wire-forms/?$ products/wire-forms/ [R=301,L]
+  RewriteRule ^custom-springs/?$ products/custom-spring/ [R=301,L]
+</IfModule>

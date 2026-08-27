@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #17202b;
+  --navy: #17324f;
+  --navy-2: #23496f;
+  --navy-deep: #0d1d2f;
+  --steel: #5b6672;
+  --steel-2: #89919b;
+  --line: #e2ded4;
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --bronze: #9c724a;
+  --bronze-2: #b98f5e;
+  --bronze-deep: #7a5636;
+  --bg: #f7f5f1;
+  --surface: #ffffff;
+  --surface-2: #efebe2;
+  --ok: #4a7a5e;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --container: 1280px;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-deep: var(--navy-deep);
+  --color-steel: var(--steel);
+  --color-steel-2: var(--steel-2);
+  --color-line: var(--line);
+  --color-bronze: var(--bronze);
+  --color-bronze-2: var(--bronze-2);
+  --color-bronze-deep: var(--bronze-deep);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(156, 114, 74, 0.1), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(35, 73, 111, 0.08), transparent 34%),
+    linear-gradient(180deg, #f7f5f1 0%, #f4f0e8 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--bronze);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--bronze);
+}
+
+.section-pad {
+  padding: 120px 0;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: 0.01em;
+  border-radius: 3px;
+  transition: all 0.25s var(--ease);
+}
+
+.btn-primary {
+  background: var(--bronze);
+  color: #1a1206;
+  padding: 15px 28px;
+}
+
+.btn-primary:hover {
+  background: var(--bronze-2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(156, 114, 74, 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 14px 24px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--bronze);
+  color: var(--bronze);
+}
+
+.card-base {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(226, 222, 212, 0.8);
+  background: linear-gradient(160deg, #ffffff 0%, #f2ecdf 55%, #ebe3d3 100%);
+  box-shadow: 0 24px 60px rgba(23, 32, 43, 0.12);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20% auto auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(156, 114, 74, 0.22), transparent 70%);
+}
+
+.technical-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(23, 50, 79, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 50, 79, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 85%);
+}
+
+.trust-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 900px) {
+  .section-pad {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+}
