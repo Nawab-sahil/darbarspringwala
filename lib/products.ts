@@ -59,7 +59,7 @@ export const products: Product[] = [
     process:
       "Formed on CNC coilers with leg-angle and torque verification against drawing specification before dispatch.",
     applications: ["Clothes pins and clips", "Hinges", "Automotive levers", "Garage doors", "Electrical switchgear"],
-    images: ["/products/torsion-1.jpg", "/products/torsion-2.jpg"],
+    images: ["/products/torsion-1.jpg"],
   },
   {
     slug: "conical-spring",

@@ -4,6 +4,9 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import StickyMobileCta from "../components/layout/StickyMobileCta";
 import Topbar from "../components/layout/Topbar";
+import Preloader from "../components/motion/Preloader";
+import ScrollCoilRail from "../components/motion/ScrollCoilRail";
+import WhatsAppFloat from "../components/layout/WhatsAppFloat";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,13 +33,16 @@ export const metadata: Metadata = {
     "Darbar Springwala is a Jamnagar-based precision spring manufacturer delivering engineered spring solutions since 1990.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-bg text-ink font-body flex flex-col">
+        <Preloader />
+        <ScrollCoilRail />
+        <WhatsAppFloat />
         <Topbar />
         <Header />
         {children}

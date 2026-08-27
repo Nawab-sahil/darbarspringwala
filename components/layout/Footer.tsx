@@ -25,11 +25,11 @@ export default function Footer() {
         <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-bronze-2">Products</p>
           <div className="mt-4 grid gap-2 text-sm text-[#C7CFD7]">
-            <Link href="/compression-springs" className="transition-colors hover:text-white">Compression Springs</Link>
-            <Link href="/extension-springs" className="transition-colors hover:text-white">Extension Springs</Link>
-            <Link href="/torsion-springs" className="transition-colors hover:text-white">Torsion Springs</Link>
-            <Link href="/wire-forms" className="transition-colors hover:text-white">Wire Forms</Link>
-            <Link href="/custom-springs" className="transition-colors hover:text-white">Custom Springs</Link>
+            <Link href="/products/compression-spring" className="transition-colors hover:text-white">Compression Springs</Link>
+            <Link href="/products/extension-tension-spring" className="transition-colors hover:text-white">Extension Springs</Link>
+            <Link href="/products/torsion-spring" className="transition-colors hover:text-white">Torsion Springs</Link>
+            <Link href="/products/wire-forms" className="transition-colors hover:text-white">Wire Forms</Link>
+            <Link href="/products/conical-spring" className="transition-colors hover:text-white">Conical Springs</Link>
           </div>
         </div>
         <div>
