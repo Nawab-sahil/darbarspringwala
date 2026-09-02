@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Compass, ArrowUpRight } from "lucide-react";
 import logo from "@/public/logo.png";
 import { contactInfo } from "../../lib/site";
 import ContactForm from "./ContactForm";
-no
+
 export default function ContactPage() {
   return (
     <main className="flex-1 bg-[#f7f9fa] py-14 lg:py-24 relative overflow-hidden">
