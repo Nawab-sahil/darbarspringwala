@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Compass, ArrowUpRight } from "lucide-react";
-import logo from "../logo.png";
+import logo from "@/public/logo.png";
 import { contactInfo } from "../../lib/site";
 import ContactForm from "./ContactForm";
 

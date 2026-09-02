@@ -155,7 +155,10 @@ export default function ManufacturingPage() {
             We welcome technical audit teams and procurement officers from automotive, electrical, and engineering OEMs to visit our Jamnagar factory floor and inspect our coiling systems and load verification setups.
           </p>
           <div className="mt-8">
-            <Link href="/contact" className="btn-primary bg-white text-navy hover:bg-bronze hover:text-white px-8 py-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
               Schedule Audits / Visits
             </Link>
           </div>

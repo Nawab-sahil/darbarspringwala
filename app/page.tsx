@@ -7,21 +7,16 @@ import {
   Cpu,
   ShieldCheck,
   Zap,
-  Phone,
-  Mail,
   ArrowUpRight,
   ChevronRight,
   Settings,
   Scale,
   History,
-  Globe,
   Award,
-  SlidersHorizontal,
-  CheckCircle2
+  SlidersHorizontal
 } from "lucide-react";
 import ProductCard from "../components/ui/ProductCard";
 import ProductMarquee from "../components/ui/ProductMarquee";
-import { contactInfo } from "../lib/site";
 import { products } from "../lib/products";
 
 // 1. Trust & Heritage items

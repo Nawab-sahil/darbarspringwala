@@ -6,11 +6,7 @@ import {
   History, 
   Award, 
   ShieldCheck, 
-  Cpu, 
-  Scale, 
-  Zap, 
   ArrowRight, 
-  Compass, 
   Activity, 
   Boxes, 
   Settings,
@@ -430,10 +426,16 @@ export default function AboutPage() {
             Need a reliable spring manufacturer that understands material stress, elastic load-rates, and cycle-fatigue? Share your specification drawing or call us to receive an immediate quotation.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-primary border-transparent bg-white text-[#17324f] hover:bg-[#9c724a] hover:text-white px-8 py-4 text-sm font-bold shadow-lg shadow-navy/20">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
               Submit Quotation Form
             </Link>
-            <Link href="/products" className="btn-secondary border-white/20 text-white hover:border-white px-8 py-4 text-sm font-bold">
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white text-white text-sm font-extrabold uppercase tracking-wider backdrop-blur-md transition-all duration-300 active:scale-95"
+            >
               Explore Products
             </Link>
           </div>
