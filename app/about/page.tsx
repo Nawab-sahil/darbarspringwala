@@ -138,7 +138,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="mt-8 text-md lg:text-lg leading-relaxed text-[#5b6672] max-w-2xl">
-                Founded in 1990 in Jamnagar, Darbar Springwala is a specialized B2B manufacturer of custom precision springs. We combine decades of raw metallurgical craft with advanced CNC coiling automation to support critical engineering assemblies nationwide.
+                Founded in 1990 in Jamnagar, Gujarat, <strong>Darbar Springwala</strong> is a specialized B2B industrial spring manufacturer & supplier. Operating from the heart of Gujarat&apos;s premier brass and metal manufacturing hub in Jamnagar GIDC, we combine over 35 years of raw metallurgical craft with advanced CNC coiling automation to support critical OEM engineering assemblies across India and international export markets.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">

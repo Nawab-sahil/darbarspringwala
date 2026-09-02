@@ -91,10 +91,10 @@ export default function IndustriesPage() {
               Application Scope
             </span>
             <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
-              Industries We Serve
+              Industrial Spring Supply Across Sectors
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel">
-              We manufacture calibrated coiling components tailored to the operational demands of diverse engineering sectors. From micro-tolerances in electronics to heavy loads in agriculture, we deliver structural reliability.
+              As a premier Jamnagar spring manufacturer, Darbar Springwala supplies calibrated coiling components tailored to the operational demands of diverse engineering sectors across Gujarat and India.
             </p>
           </motion.div>
         </div>

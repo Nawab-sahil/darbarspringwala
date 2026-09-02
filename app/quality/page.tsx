@@ -77,10 +77,10 @@ export default function QualityPage() {
               Zero Defect Winding
             </span>
             <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
-              Quality Assurance & Testing
+              ISO 9001:2015 Quality Assurance & Testing in Jamnagar
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel max-w-xl">
-              Spring performance depends on micro-tolerances. We build quality into every coil through strict process controls, automated length monitoring, and manual verification audits.
+              At our Jamnagar spring manufacturing facility, quality control is integrated into every CNC coiling step. We verify spring load rates, wire tolerances, and fatigue limits to deliver zero-defect industrial springs.
             </p>
             <div className="mt-8">
               <a 

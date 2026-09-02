@@ -44,10 +44,10 @@ export default function ContactPage() {
                   Contact
                 </span>
                 <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight font-display text-white">
-                  Let&apos;s Discuss Your Spring Requirement.
+                  Connect with Jamnagar&apos;s Trusted Spring Manufacturer.
                 </h1>
                 <p className="text-xs sm:text-sm text-steel-2/90 leading-relaxed">
-                  Share your technical parameters and our engineering team will respond with a custom feasibility analysis and quotation.
+                  Share your custom technical parameters with our Jamnagar GIDC engineering team for compression, torsion, extension, or wire form quotations.
                 </p>
               </div>
 

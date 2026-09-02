@@ -67,10 +67,10 @@ export default function ManufacturingPage() {
               Production Capacity
             </span>
             <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
-              From Wire to Precision Component
+              Precision Spring Manufacturing Plant in Jamnagar, Gujarat
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel max-w-xl">
-              Our Jamnagar production facility pairs automatic coiling centers with automated load testing. We coil raw carbon and stainless steel wires into reliable custom spring assemblies.
+              Located in Jamnagar GIDC, our modern spring plant combines multi-axis CNC coiling machinery with automated load testing and stress-relieving furnaces to supply custom compression, torsion, extension, and wire forms nationwide.
             </p>
             <div className="mt-8">
               <Link 
