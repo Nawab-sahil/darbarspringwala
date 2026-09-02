@@ -296,7 +296,23 @@ export default function Footer() {
 
           {/* Bottom Copyright & Technical Standards Bar */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8999a9] border-t border-white/10">
-            <p>© {new Date().getFullYear()} Darbar Springwala. All rights reserved.</p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p>© {new Date().getFullYear()} Darbar Springwala. All rights reserved.</p>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <div className="flex items-center gap-1.5 font-mono text-[11px]">
+                <span className="text-[#A4B3C6]">Created by</span>
+                <motion.a
+                  href="https://nawabsahil.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -1 }}
+                  className="inline-flex items-center gap-1 font-extrabold text-[#E5C158] hover:text-white transition-colors underline decoration-[#E5C158]/40 underline-offset-4"
+                >
+                  <span>Nawab Sahil</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </motion.a>
+              </div>
+            </div>
 
             <div className="flex flex-wrap items-center gap-6">
               <span className="font-mono text-[11px] text-white/40">JAMNAGAR, GUJARAT, INDIA</span>

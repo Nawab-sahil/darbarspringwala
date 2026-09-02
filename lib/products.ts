@@ -61,7 +61,7 @@ export const products: Product[] = [
     process:
       "Formed on CNC coilers with leg-angle and torque verification against drawing specification before dispatch.",
     applications: ["Clothes pins and clips", "Hinges", "Automotive levers", "Garage doors", "Electrical switchgear"],
-    images: ["/products/orsion Springs.png"],
+    images: ["/products/torsion-new.png"],
   },
   {
     slug: "conical-spring",
@@ -144,7 +144,7 @@ export const products: Product[] = [
     process:
       "Production planning is aligned to customer requirement, spring type, and application use-case, with quality checks through each stage.",
     applications: ["OEM applications", "Engineering components", "Machinery assemblies", "Industrial equipment"],
-    images: ["/products/Custom Springs.png"],
+    images: ["/products/customizespring.png"],
   },
 ];
 

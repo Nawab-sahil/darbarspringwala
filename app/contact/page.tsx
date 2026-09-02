@@ -7,23 +7,23 @@ import { Mail, Phone, MapPin, Compass, ArrowUpRight } from "lucide-react";
 import logo from "@/public/logo.png";
 import { contactInfo } from "../../lib/site";
 import ContactForm from "./ContactForm";
-
+no
 export default function ContactPage() {
   return (
     <main className="flex-1 bg-[#f7f9fa] py-14 lg:py-24 relative overflow-hidden">
       {/* Blueprint Grid Accent */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #17324f 1.5px, transparent 1.5px)',
           backgroundSize: '24px 24px'
-        }} 
+        }}
       />
 
       <div className="container relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-12 items-start">
           {/* Left Column: Direct Contact Info (Span 5) */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -31,13 +31,13 @@ export default function ContactPage() {
           >
             {/* Ambient gold glow */}
             <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-[#9c724a]/25 blur-3xl pointer-events-none" />
-            
+
             <div className="relative z-10 space-y-8">
               {/* Logo */}
               <div className="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-white/20 shadow-sm">
                 <Image src={logo} alt="Darbar Springwala" className="h-9 w-auto" priority />
               </div>
-              
+
               {/* Titles */}
               <div className="space-y-3">
                 <span className="eyebrow block">
@@ -118,9 +118,9 @@ export default function ContactPage() {
 
               {/* Google Maps Button */}
               <div className="pt-4 border-t border-white/10">
-                <Link 
-                  href={contactInfo.mapsUrl} 
-                  target="_blank" 
+                <Link
+                  href={contactInfo.mapsUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-5 py-3.5 text-xs font-bold text-[#9C724A] hover:bg-[#9C724A] hover:text-white transition-all w-full justify-center group"
                 >
@@ -133,7 +133,7 @@ export default function ContactPage() {
           </motion.section>
 
           {/* Right Column: Contact Form (Span 7) */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -150,7 +150,7 @@ export default function ContactPage() {
                 Complete our secure form to transmit blueprint parameters directly to our Jamnagar coiling engineers.
               </p>
             </div>
-            
+
             <ContactForm />
           </motion.section>
         </div>
