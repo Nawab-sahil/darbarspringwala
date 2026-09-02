@@ -2,24 +2,23 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { contactInfo } from "../../lib/site";
 
 export default function WhatsAppFloat() {
   return (
     <motion.div
-      className="fixed bottom-24 right-6 z-40 sm:bottom-28"
+      className="fixed bottom-24 right-6 z-40 md:bottom-6"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 2, type: "spring", stiffness: 260, damping: 20 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      transition={{ delay: 0.8, type: "spring", stiffness: 260, damping: 20 }}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
     >
       <Link
-        href={contactInfo.whatsappUrl}
+        href="https://wa.me/919974155963"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-14 w-14 sm:h-[56px] sm:w-[56px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(37,211,102,0.4)]"
-        aria-label="Contact on WhatsApp"
+        className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-shadow duration-300 hover:shadow-[0_8px_25px_rgba(37,211,102,0.45)]"
+        aria-label="Contact Darbar Springwala on WhatsApp"
       >
         <svg
           className="h-7 w-7 fill-current"

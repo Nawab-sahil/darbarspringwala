@@ -61,24 +61,32 @@ h4 {
   margin-inline: auto;
 }
 
+/* Universal Rounded Capsule Eyebrow Badge with Dot */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 14px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(156, 114, 74, 0.08);
+  border: 1px solid rgba(156, 114, 74, 0.3);
   color: var(--bronze);
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .eyebrow::before {
   content: "";
-  display: block;
-  width: 22px;
-  height: 1px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   background: var(--bronze);
+  flex-shrink: 0;
 }
 
 .section-pad {

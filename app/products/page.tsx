@@ -7,11 +7,11 @@ import {
   Search, 
   SlidersHorizontal, 
   ArrowUpRight, 
-  ShieldCheck, 
   CheckCircle2, 
   Cpu, 
   Layers, 
   Sparkles,
+  ShieldCheck,
   X
 } from "lucide-react";
 import ProductCard from "../../components/ui/ProductCard";
@@ -50,51 +50,104 @@ export default function ProductsPage() {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <main className="min-h-screen bg-[#f7f9fa] py-14 lg:py-24">
+    <main className="min-h-screen bg-[#f7f9fa] py-14 lg:py-20">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* ========================================================================= */}
-        {/* 1. HERO SECTION */}
+        {/* 1. HERO SECTION (2-COLUMN BALANCED LAYOUT MATCHING MANUFACTURING/QUALITY) */}
         {/* ========================================================================= */}
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-          className="max-w-4xl space-y-4"
-        >
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-bronze/30 bg-bronze/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-bronze shadow-sm">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            ISO 9001:2015 CERTIFIED PRODUCT CATALOGUE
-          </div>
-
-          <h1 className="text-[clamp(34px,4.8vw,58px)] font-black leading-[1.06] tracking-tight text-navy font-display">
-            Engineering-Grade{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-bronze to-bronze-2">
-              Spring Solutions
-            </span>
-          </h1>
-
-          <p className="text-steel text-base sm:text-lg leading-relaxed max-w-2xl">
-            Precision-coiled industrial springs and wire-formed assemblies manufactured for automotive, electrical switchgear, heavy machinery, and OEM applications.
-          </p>
-
-          {/* Quick Technical Parameter Badges */}
-          <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono font-bold text-navy">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-line shadow-sm">
-              <Cpu className="h-3.5 w-3.5 text-bronze" />
-              <span>0.2mm - 16.0mm Wire Range</span>
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-12 items-center">
+          
+          {/* Left Column: Heading & Copy */}
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-4"
+          >
+            {/* Eyebrow badge */}
+            <div>
+              <span className="eyebrow">
+                ISO 9001:2015 CERTIFIED CATALOGUE
+              </span>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-line shadow-sm">
-              <Layers className="h-3.5 w-3.5 text-bronze" />
-              <span>High-Fatigue Steel Alloys</span>
+
+            <h1 className="text-[clamp(32px,4vw,52px)] font-black text-[#17324F] leading-tight font-display tracking-tight">
+              Engineering-Grade{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17324F] via-[#9C724A] to-[#825B36]">
+                Spring Solutions
+              </span>
+            </h1>
+
+            <p className="text-steel text-base sm:text-lg leading-relaxed max-w-xl">
+              Precision-coiled industrial springs and wire-formed assemblies manufactured for automotive, electrical switchgear, heavy machinery, and OEM applications.
+            </p>
+
+            {/* Quick Technical Parameter Badges */}
+            <div className="pt-3 flex flex-wrap gap-3 text-xs font-mono font-bold text-[#17324F]">
+              <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-line shadow-xs">
+                <Cpu className="h-3.5 w-3.5 text-[#9C724A]" />
+                <span>0.2mm – 16.0mm Wire Range</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-line shadow-xs">
+                <Layers className="h-3.5 w-3.5 text-[#9C724A]" />
+                <span>High-Fatigue Steel Alloys</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-line shadow-xs">
+                <Sparkles className="h-3.5 w-3.5 text-[#9C724A]" />
+                <span>DIN 2095 Grade 1 Tolerances</span>
+              </div>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-line shadow-sm">
-              <Sparkles className="h-3.5 w-3.5 text-bronze" />
-              <span>DIN 2095 Grade 1 Tolerances</span>
+          </motion.div>
+
+          {/* Right Column: Catalogue Technical Specs Card */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="rounded-3xl border border-line p-6 sm:p-7 bg-gradient-to-br from-white via-white to-[#f4eee4] shadow-md space-y-4"
+          >
+            <div className="flex items-center justify-between border-b border-line/60 pb-3.5">
+              <h3 className="font-bold text-[#17324F] text-base sm:text-lg font-display flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-[#9C724A]" />
+                Catalogue Quick Specs
+              </h3>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#9C724A] bg-[#9C724A]/10 px-2.5 py-1 rounded-md">
+                B2B OEM Ready
+              </span>
             </div>
-          </div>
-        </motion.div>
+
+            <ul className="space-y-3 text-xs text-steel">
+              <li className="flex justify-between border-b border-line/50 pb-2">
+                <span className="font-bold text-[#17324F]">Coiling Capacity</span>
+                <span className="font-mono text-[#9C724A] font-bold">0.2mm to 16.0mm wire</span>
+              </li>
+              <li className="flex justify-between border-b border-line/50 pb-2">
+                <span className="font-bold text-[#17324F]">Raw Alloys</span>
+                <span className="font-mono text-[#9C724A] font-bold">IS 4454, SS 302/316, Inconel</span>
+              </li>
+              <li className="flex justify-between border-b border-line/50 pb-2">
+                <span className="font-bold text-[#17324F]">Quality Standards</span>
+                <span className="font-mono text-[#9C724A] font-bold">DIN 2095 / ISO 9001:2015</span>
+              </li>
+              <li className="flex justify-between pb-1">
+                <span className="font-bold text-[#17324F]">Blueprint Prototypes</span>
+                <span className="font-mono text-[#9C724A] font-bold">Dispatched in 48 hours</span>
+              </li>
+            </ul>
+
+            <div className="pt-2">
+              <Link 
+                href="/contact" 
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#17324F] hover:bg-[#081423] text-white text-xs font-extrabold uppercase tracking-wider transition-all duration-300 shadow-sm group"
+              >
+                <span>Request Custom Spec RFQ</span>
+                <ArrowUpRight className="h-4 w-4 text-[#E5C158] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
+          </motion.div>
+
+        </div>
 
         {/* Product Marquee Ticker */}
         <div className="my-10">
@@ -204,9 +257,11 @@ export default function ProductsPage() {
         {/* ========================================================================= */}
         <section className="mt-20 rounded-[32px] border border-line bg-white p-8 sm:p-12 shadow-sm">
           <div className="max-w-3xl space-y-3">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-bronze">
-              Material Metallurgy & Finishes
-            </span>
+            <div>
+              <span className="eyebrow">
+                Material Metallurgy & Finishes
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-navy font-display">
               High-Tensile Wire Alloys & Surface Coatings
             </h2>

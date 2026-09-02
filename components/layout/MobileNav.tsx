@@ -92,7 +92,7 @@ export default function MobileNav() {
                               key={link.href}
                               href={link.href}
                               onClick={() => setOpen(false)}
-                              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all ${
+                              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all focus:outline-none outline-none select-none [-webkit-tap-highlight-color:transparent] ${
                                 isActive
                                   ? "bg-[#9C724A] text-white font-bold shadow-md shadow-[#9C724A]/30"
                                   : "text-white/80 hover:bg-white/5 hover:text-white"

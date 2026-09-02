@@ -2,24 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, ShieldCheck, CheckCircle2, Cpu, Wrench, Layers } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import { getProduct, products } from "../../../lib/products";
-import ProductCard from "../../../components/ui/ProductCard";
-
-const faqItems = [
-  {
-    q: "Can this spring be manufactured in custom dimensions?",
-    a: "Yes. Custom wire diameters (0.2mm to 16.0mm), inner/outer diameters, free lengths, and active coil counts are available to exact blueprint specifications.",
-  },
-  {
-    q: "Can I share a drawing or sample for quotation?",
-    a: "Yes. You can submit CAD drawings (PDF, STEP, DWG), technical specifications, or physical samples directly to our engineering team.",
-  },
-  {
-    q: "Are custom heat treatments and surface finishes available?",
-    a: "We offer stress-relieving tempering, shot peening, trivalent zinc plating, black oxiding, powder coating, and electro-polishing according to operating environment demands.",
-  },
-];
+import Card from "../../../components/ui/Card";
+import Button from "../../../components/ui/Button";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -38,8 +24,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   }
 
   return {
-    title: `${product.name} Manufacturer | Darbar Springwala`,
-    description: product.description,
+    title: `${product.name} Manufacturer & Supplier | Darbar Springwala`,
+    description: product.shortDescription || product.description,
   };
 }
 
@@ -51,215 +37,158 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const related = products.filter((item) => item.slug !== product.slug).slice(0, 3);
-  const mainImage = product.images[0] || "/placeholder.jpg";
+  const faqItems = [
+    {
+      q: `Can ${product.name} be manufactured to custom dimensions?`,
+      a: "Yes. Custom wire diameters, inner/outer diameters, free length, and active coil counts are manufactured to your exact drawing or sample specifications.",
+    },
+    {
+      q: "What materials and surface treatments are available?",
+      a: `We supply ${product.name} in ${product.materials.slice(0, 3).join(", ")}, with finish options including ${product.finishes.slice(0, 3).join(", ")}.`,
+    },
+    {
+      q: "How can I request a quotation for technical drawings?",
+      a: "You can submit CAD drawings (STEP, PDF, DWG) or physical sample specifications directly to our engineering team for immediate technical review and quotation.",
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-[#f7f9fa] py-12 lg:py-20">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+    <main className="min-h-screen bg-[#f7f9fa] py-10 lg:py-16">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
         
-        {/* Breadcrumb Navigation */}
-        <div className="flex items-center gap-2 font-mono text-xs text-steel">
+        {/* 1. Breadcrumb Row */}
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-mono text-xs text-steel">
           <Link href="/" className="hover:text-bronze transition-colors">Home</Link>
           <span>/</span>
           <Link href="/products" className="hover:text-bronze transition-colors">Products</Link>
           <span>/</span>
           <span className="text-navy font-bold">{product.name}</span>
-        </div>
+        </nav>
 
-        {/* Hero Section */}
-        <section className="mt-8 grid gap-10 lg:grid-cols-12 items-start border-b border-line pb-16">
-          
-          {/* Product Floating 3D Vector Asset Frame (7 Cols) */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[32px] border border-line bg-gradient-to-b from-white to-[#f0f4f8] shadow-lg flex items-center justify-center p-8">
-              {/* Technical Dot Matrix Grid Overlay */}
-              <div 
-                className="absolute inset-0 opacity-[0.05] pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(circle, #17324f 1.5px, transparent 1.5px)`,
-                  backgroundSize: '24px 24px'
-                }}
+        {/* 2. Eyebrow + H1 Product Name + 1-Sentence Description */}
+        <header className="space-y-3">
+          <span className="eyebrow block">
+            Manufacturer & Supplier of
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-navy font-display tracking-tight">
+            {product.name}
+          </h1>
+          <p className="text-sm sm:text-base text-steel max-w-3xl leading-relaxed">
+            {product.shortDescription || product.description}
+          </p>
+        </header>
+
+        {/* 3. Image Gallery */}
+        <section className="grid gap-6 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-8 space-y-4">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-line/70 bg-gradient-to-b from-[#fbf9f5] to-[#f4efe6] shadow-sm flex items-center justify-center p-6 sm:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.9)_0%,transparent_75%)] pointer-events-none" />
+              <Image
+                src={product.images[0] || "/placeholder.jpg"}
+                alt={product.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 65vw"
+                className="object-contain p-4 drop-shadow-lg transition-transform duration-500 hover:scale-105"
+                priority
               />
-
-              {/* Isolated Floating 3D Spring Asset */}
-              <div className="relative w-full h-full flex items-center justify-center">
-                <Image
-                  src={mainImage}
-                  alt={product.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-contain drop-shadow-[0_20px_35px_rgba(23,50,79,0.25)] transition-transform duration-500 hover:scale-105"
-                  priority
-                />
-              </div>
-
-              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy text-white text-[10px] font-mono font-bold uppercase tracking-wider">
-                <ShieldCheck className="h-3.5 w-3.5 text-bronze" />
-                ISO 9001:2015 AUDITED
-              </div>
-            </div>
-          </div>
-
-          {/* Product Overview & Quick Action Sidebar (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-6 space-y-4">
-            <div className="space-y-4">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-bronze">
-                Product Lineup
+              <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#17324F] text-white font-mono text-[10px] font-bold uppercase tracking-wider shadow-xs">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#E5C158]" />
+                ISO 9001:2015 Audited
               </span>
-              <h1 className="text-[clamp(32px,3.8vw,46px)] font-black leading-[1.08] text-navy font-display">
-                {product.name}
-              </h1>
-              <p className="text-steel text-sm sm:text-base leading-relaxed">{product.description}</p>
             </div>
 
-            {/* Application Focus Glass Card */}
-            <div className="rounded-3xl border border-line bg-white p-7 shadow-sm space-y-4">
-              <div className="flex items-center justify-between border-b border-line pb-3">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-bronze">
-                  Primary Application Focus
-                </span>
-                <span className="h-2 w-2 rounded-full bg-bronze animate-pulse" />
+            {/* Thumbnail row if multiple images */}
+            {product.images.length > 1 && (
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {product.images.map((img, idx) => (
+                  <div key={img} className="relative h-20 w-24 shrink-0 rounded-xl border border-line bg-white p-2 overflow-hidden shadow-xs">
+                    <Image src={img} alt={`${product.name} thumbnail ${idx + 1}`} fill className="object-contain p-1" />
+                  </div>
+                ))}
               </div>
-              <p className="text-xl font-bold text-navy font-display">{product.applicationTag}</p>
-              <p className="text-xs text-steel leading-relaxed">
-                Coiled to custom blueprint tolerances based on working loads, fatigue environment, and dimensional limits.
-              </p>
-              <Link 
-                href={`/contact?product=${product.slug}`} 
-                className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-navy text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-navy/20 transition-all duration-300 hover:bg-bronze hover:shadow-bronze/30"
-              >
-                <span>Request Custom Quote</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-            </div>
+            )}
           </div>
 
+          <div className="lg:col-span-4 rounded-2xl border border-line bg-white p-6 shadow-sm space-y-4">
+            <h2 className="text-base font-bold text-navy font-display">Technical Overview</h2>
+            <p className="text-xs text-steel leading-relaxed">
+              {product.description}
+            </p>
+            <div className="pt-2 border-t border-line/60">
+              <Button href={`/contact?product=${product.slug}`} variant="primary" size="default" className="w-full">
+                Request Specifications
+              </Button>
+            </div>
+          </div>
         </section>
 
-        {/* Key Applications */}
-        <section className="mt-14 space-y-6">
-          <div className="flex items-center gap-2">
-            <Wrench className="h-5 w-5 text-bronze" />
-            <h2 className="text-2xl font-black text-navy font-display">Key Applications & Use-Cases</h2>
+        {/* 4. Spec Block Grid (2x2 / 4-col) */}
+        <section className="space-y-4">
+          <h2 className="text-xl font-extrabold text-navy font-display">Engineering Specifications</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="rounded-xl border border-line bg-white p-5 space-y-1.5 shadow-xs">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-steel font-semibold block">Material</span>
+              <p className="text-sm font-bold text-navy">{product.materials.join(", ")}</p>
+            </div>
+            <div className="rounded-xl border border-line bg-white p-5 space-y-1.5 shadow-xs">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-steel font-semibold block">Finish</span>
+              <p className="text-sm font-bold text-navy">{product.finishes.join(", ")}</p>
+            </div>
+            <div className="rounded-xl border border-line bg-white p-5 space-y-1.5 shadow-xs">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-steel font-semibold block">Manufacturing Process</span>
+              <p className="text-sm font-bold text-navy">{product.process || "Automated CNC Spring Coiling & Tempering"}</p>
+            </div>
+            <div className="rounded-xl border border-line bg-white p-5 space-y-1.5 shadow-xs">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-steel font-semibold block">Application</span>
+              <p className="text-sm font-bold text-navy">{product.applicationTag || "Application-Specific"}</p>
+            </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        </section>
+
+        {/* 5. "Applications" Section */}
+        <section className="space-y-4">
+          <h2 className="text-xl font-extrabold text-navy font-display">Target Applications & Industry Use-Cases</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {product.applications.map((app) => (
-              <div key={app} className="flex items-center gap-3 rounded-2xl border border-line/80 bg-white p-4 text-sm font-bold text-navy shadow-sm">
-                <CheckCircle2 className="h-4 w-4 text-bronze shrink-0" />
+              <div key={app} className="flex items-center gap-3 rounded-xl border border-line bg-white p-4 text-xs font-semibold text-navy shadow-xs">
+                <span className="p-1 rounded-full bg-bronze/10 text-bronze shrink-0">
+                  <Check className="h-4 w-4" />
+                </span>
                 <span>{app}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Engineering Characteristics & Materials Grid */}
-        <section className="mt-14 grid gap-7 md:grid-cols-3">
-          <article className="rounded-3xl border border-line bg-white p-7 shadow-sm space-y-4">
-            <div className="inline-flex p-3 rounded-xl bg-bronze/10 text-bronze">
-              <Cpu className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-navy font-display">Engineering Parameters</h3>
-            <ul className="space-y-2.5 text-xs text-steel font-mono">
-              <li className="flex items-center gap-2">• Fully customizable ID/OD & free length</li>
-              <li className="flex items-center gap-2">• Optimized for high cycle fatigue limits</li>
-              <li className="flex items-center gap-2">• Precision CNC multi-axis coiling</li>
-            </ul>
-          </article>
-
-          <article className="rounded-3xl border border-line bg-white p-7 shadow-sm space-y-4">
-            <div className="inline-flex p-3 rounded-xl bg-bronze/10 text-bronze">
-              <Layers className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-navy font-display">Material Options</h3>
-            <ul className="space-y-2.5 text-xs text-steel font-mono">
-              {product.materials.map((mat) => (
-                <li key={mat} className="flex items-center gap-2">• {mat}</li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="rounded-3xl border border-line bg-white p-7 shadow-sm space-y-4">
-            <div className="inline-flex p-3 rounded-xl bg-bronze/10 text-bronze">
-              <ShieldCheck className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-navy font-display">Surface Finishes</h3>
-            <ul className="space-y-2.5 text-xs text-steel font-mono">
-              {product.finishes.map((fin) => (
-                <li key={fin} className="flex items-center gap-2">• {fin}</li>
-              ))}
-            </ul>
-          </article>
-        </section>
-
-        {/* Manufacturing & QA Process */}
-        <section className="mt-14 grid gap-7 lg:grid-cols-12">
-          <div className="lg:col-span-7 rounded-3xl border border-line bg-white p-8 shadow-sm space-y-4">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-bronze">Manufacturing Process</span>
-            <h3 className="text-2xl font-bold text-navy font-display">CNC Coiling & Stress Relieving</h3>
-            <p className="text-steel text-sm leading-relaxed">{product.process}</p>
-          </div>
-
-          <div className="lg:col-span-5 rounded-3xl border border-line bg-white p-8 shadow-sm space-y-4">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-bronze">Quality Assurance</span>
-            <h3 className="text-2xl font-bold text-navy font-display">100% Load Audits</h3>
-            <ul className="space-y-3 text-xs text-steel font-mono">
-              <li className="flex items-center gap-2">✓ In-line statistical process control checks</li>
-              <li className="flex items-center gap-2">✓ Automated load-deflection verification</li>
-              <li className="flex items-center gap-2">✓ Profile projection measurement before dispatch</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* FAQs */}
-        <section className="mt-16 space-y-6">
-          <h2 className="text-2xl font-black text-navy font-display">Frequently Asked Questions</h2>
-          <div className="grid gap-4">
+        {/* 6. FAQ Mini-Accordion (Reusing <Card variant="faq">) */}
+        <section className="space-y-4 pt-4 border-t border-line/60">
+          <h2 className="text-xl font-extrabold text-navy font-display">Frequently Asked Questions</h2>
+          <div className="space-y-1">
             {faqItems.map((item) => (
-              <article key={item.q} className="rounded-2xl border border-line bg-white p-6 shadow-sm space-y-2">
-                <h3 className="text-base font-bold text-navy">{item.q}</h3>
-                <p className="text-xs text-steel leading-relaxed">{item.a}</p>
-              </article>
+              <Card
+                key={item.q}
+                variant="faq"
+                question={item.q}
+                answer={item.a}
+              />
             ))}
           </div>
         </section>
 
-        {/* Related Products */}
-        <section className="mt-20 space-y-8">
-          <h2 className="text-2xl font-black text-navy font-display">Related Spring Categories</h2>
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {related.map((item, index) => (
-              <ProductCard key={item.slug} product={item} index={index} />
-            ))}
+        {/* 7. CTA Band (Reusing <Button variant="primary">) */}
+        <section className="rounded-2xl border border-line bg-[#081423] text-white p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-display">
+              Need {product.name.toLowerCase()} for your application?
+            </h2>
+            <p className="text-xs sm:text-sm text-steel-2/90 max-w-xl">
+              Connect with our Jamnagar engineering team to receive a blueprint quotation and technical feasibility assessment.
+            </p>
           </div>
+          <Button href={`/contact?product=${product.slug}`} variant="primary" size="default">
+            Request a Quote
+          </Button>
         </section>
-
-        {/* Final CTA Banner */}
-        <div className="mt-20 overflow-hidden rounded-[32px] border border-line bg-gradient-to-r from-[#17324f] via-[#10243b] to-[#091728] text-white shadow-2xl relative">
-          <div 
-            className="absolute inset-0 opacity-10 pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
-              backgroundSize: '20px 20px'
-            }}
-          />
-          <div className="relative z-10 px-8 py-12 md:px-14 md:py-14 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="space-y-3">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#E5C158] font-bold">Request Quotation</span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-display">Need {product.name} for your application?</h2>
-              <p className="text-sm text-[#ccd5df] max-w-xl">
-                Share your CAD drawing, wire dimensions, operating environment, and batch quantity with our engineers.
-              </p>
-            </div>
-            <Link 
-              href={`/contact?product=${product.slug}`} 
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#9C724A] to-[#825B36] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 shrink-0"
-            >
-              <span>Submit RFQ Specifications</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
 
       </div>
     </main>

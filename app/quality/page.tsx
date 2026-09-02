@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, FileDown, Settings2, Sparkles, ClipboardCheck, Ruler } from "lucide-react";
+import { ShieldCheck, FileDown, Settings2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const qcSteps = [
@@ -55,105 +55,154 @@ const standards = [
 
 export default function QualityPage() {
   return (
-    <main className="flex-1 bg-surface-2">
-      {/* Page Header */}
+    <main className="flex-1 bg-[#f7f9fa]">
+      {/* Hero Header */}
       <section className="relative overflow-hidden border-b border-line/50 bg-white py-16 lg:py-24">
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, #17324f 1px, transparent 1px)',
-          backgroundSize: '20px 20px'
-        }} />
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, #17324f 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px'
+          }} 
+        />
 
-        <div className="container relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
-          <div>
-            <p className="eyebrow">Zero Defect Winding</p>
-            <h1 className="text-[clamp(34px,5vw,56px)] font-bold text-navy leading-none mt-2">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="eyebrow block">
+              Zero Defect Winding
+            </span>
+            <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
               Quality Assurance & Testing
             </h1>
-            <p className="mt-6 text-lg leading-8 text-steel max-w-xl">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel max-w-xl">
               Spring performance depends on micro-tolerances. We build quality into every coil through strict process controls, automated length monitoring, and manual verification audits.
             </p>
             <div className="mt-8">
               <a 
-                href="/products" // Fallback link
+                href="/products"
                 onClick={(e) => {
                   e.preventDefault();
                   alert("Capability Profile download is initialized. Mock PDF generated successfully.");
                 }}
-                className="btn-primary inline-flex items-center gap-2"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md shadow-[#9C724A]/20 transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <FileDown className="h-4 w-4" />
-                Download Capability Profile PDF
+                <span>Download Capability Profile PDF</span>
               </a>
             </div>
-          </div>
-          <div className="card-base p-6 bg-[linear-gradient(155deg,#fff_0%,#f2ede2_100%)]">
-            <h3 className="font-semibold text-navy text-lg">Material Grade Compliance</h3>
-            <p className="text-xs text-steel mt-1">We wound custom springs strictly to Indian, American, and European material standards:</p>
-            <ul className="mt-4 space-y-2">
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl border border-line p-6 bg-gradient-to-br from-white via-white to-[#f4eee4] shadow-md space-y-4"
+          >
+            <h3 className="font-bold text-[#17324F] text-lg font-display">Material Grade Compliance</h3>
+            <p className="text-xs text-steel">We wound custom springs strictly to Indian, American, and European material standards:</p>
+            <ul className="space-y-2.5 pt-1">
               {standards.map((std, i) => (
-                <li key={i} className="flex items-center gap-2 font-mono text-[10px] text-steel-2 uppercase tracking-wide">
-                  <span className="h-1.5 w-1.5 rounded-full bg-bronze shrink-0" />
+                <li key={i} className="flex items-center gap-2 font-mono text-[11px] text-steel-2 font-bold uppercase tracking-wide">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#9C724A] shrink-0" />
                   {std}
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Testing Equipment */}
-      <section className="section-pad bg-white">
-        <div className="container grid gap-16 lg:grid-cols-[0.8fr_1.2fr] items-center">
-          <div>
-            <p className="eyebrow">Our Laboratory</p>
-            <h2 className="text-3xl font-bold text-navy mt-2">Equipped for Calibrated Verification</h2>
-            <p className="mt-4 text-steel leading-relaxed">
+      {/* Testing Laboratory */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="eyebrow block">
+              Our Laboratory
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#17324F] font-display mt-2">
+              Equipped for Calibrated Verification
+            </h2>
+            <p className="mt-4 text-steel text-sm sm:text-base leading-relaxed">
               We maintain a dedicated testing laboratory equipped to verify mechanical behavior, fatigue limits, and physical geometry. Every test is logged against batch production records for B2B traceability.
             </p>
-          </div>
+          </motion.div>
+
           <div className="space-y-4">
             {equipment.map((eq, idx) => (
-              <div key={idx} className="flex gap-4 p-5 rounded-xl border border-line bg-surface-2/30">
-                <div className="rounded-lg bg-navy/5 p-2 text-navy h-10 w-10 flex items-center justify-center shrink-0">
-                  <Settings2 className="h-5 w-5" />
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.06 }}
+                className="flex gap-4 p-5 rounded-2xl border border-line bg-surface-2/30 hover:bg-white hover:shadow-md transition-all"
+              >
+                <div className="rounded-xl bg-[#17324F]/5 p-2.5 text-[#17324F] h-10 w-10 flex items-center justify-center shrink-0">
+                  <Settings2 className="h-5 w-5 text-[#9C724A]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-navy">{eq.name}</h4>
+                  <h4 className="text-sm font-bold text-[#17324F]">{eq.name}</h4>
                   <p className="text-xs text-steel mt-1 leading-relaxed">{eq.use}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* QC Steps */}
-      <section className="section-pad border-t border-line bg-surface">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="eyebrow">Workflow</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">Quality Control Inspection Gates</h2>
-            <p className="mt-3 text-steel">
+      <section className="py-16 sm:py-20 border-t border-line/60 bg-surface">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center"
+          >
+            <span className="eyebrow">
+              Workflow
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#17324F] font-display mt-2">
+              Quality Control Inspection Gates
+            </h2>
+            <p className="mt-3 text-steel text-sm leading-relaxed">
               Our springs undergo six structured QC inspection gates during the transformation from raw wire coils to finished assemblies.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {qcSteps.map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -6 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="card-base p-6 bg-white hover:border-navy transition-all duration-300 relative flex flex-col justify-between"
+                transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
+                className="rounded-2xl border border-line bg-white p-6 hover:border-[#17324F] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <span className="font-mono text-[9px] font-bold text-bronze uppercase tracking-widest bg-bronze/5 px-2.5 py-1 rounded-md">
+                  <span className="font-mono text-[9px] font-bold text-[#9C724A] uppercase tracking-widest bg-[#9C724A]/10 px-2.5 py-1 rounded-md">
                     {step.tag}
                   </span>
-                  <h3 className="text-lg font-bold text-navy mt-5">{step.title}</h3>
-                  <p className="text-xs leading-relaxed text-steel mt-2">{step.desc}</p>
+                  <h3 className="text-lg font-bold text-[#17324F] font-display mt-5 group-hover:text-[#9C724A] transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-steel mt-2 leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -162,25 +211,39 @@ export default function QualityPage() {
       </section>
 
       {/* B2B Callout */}
-      <section className="section-pad bg-navy text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-          backgroundSize: '24px 24px'
-        }} />
-        <div className="container relative z-10 max-w-3xl mx-auto">
-          <ShieldCheck className="h-12 w-12 text-bronze-2 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold">Request Inspection Reports</h2>
-          <p className="mt-4 text-[#ccd5df] leading-relaxed">
-            Need material certificate logs, force-displacement charts, or dimensional reports with your delivery batch? We provide complete documentation support for automotive and enterprise OEM audits.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              Contact Quality Team
-            </Link>
-          </div>
+      <section className="py-16 sm:py-20 bg-[#081423] text-white text-center relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }} 
+        />
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <ShieldCheck className="h-10 w-10 text-[#E5C158] mx-auto mb-2" />
+            <h2 className="text-2xl sm:text-4xl font-extrabold font-display">
+              Request Inspection Reports
+            </h2>
+            <p className="text-sm sm:text-base text-steel-2/90 leading-relaxed max-w-2xl mx-auto">
+              Need material certificate logs, force-displacement charts, or dimensional reports with your delivery batch? We provide complete documentation support for automotive and enterprise OEM audits.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                <span>Contact Quality Team</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>

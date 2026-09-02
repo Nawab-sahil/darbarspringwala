@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   title: "Darbar Springwala | Precision Spring Manufacturer",
   description:
     "Darbar Springwala is a Jamnagar-based precision spring manufacturer delivering engineered spring solutions since 1990.",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -39,6 +47,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body className="min-h-full bg-bg text-ink font-body flex flex-col">
         <Preloader />
         <ScrollCoilRail />

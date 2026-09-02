@@ -49,12 +49,14 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+import { Variants } from "framer-motion";
+
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 25 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -240,7 +242,7 @@ export default function Footer() {
 
           {/* Interactive Framer Motion Spring Graphic Bar & Scroll-To-Top */}
           <div className="pt-8 pb-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            
+
             {/* Interactive Spring SVG Banner with Hover Motion */}
             <motion.div
               className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-5 py-3 cursor-pointer select-none"

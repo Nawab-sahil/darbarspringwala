@@ -122,7 +122,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-[#9c724a]/30 bg-[#9c724a]/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#9c724a] mb-6">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#9c724a] animate-pulse" />
@@ -156,7 +156,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1], delay: 0.1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               className="relative hidden lg:flex flex-col items-center justify-center p-8 bg-[#f7f5f1]/50 border border-[#e2ded4] rounded-2xl aspect-square shadow-inner group overflow-hidden"
             >
               {/* Technical drawing helper specs */}
@@ -406,39 +406,6 @@ export default function AboutPage() {
               </p>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* 6. CALL TO ACTION */}
-      <section className="section-pad bg-[#0d1d2f] text-white relative overflow-hidden">
-        {/* Technical blueprint overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
-          backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)',
-          backgroundSize: '24px 24px'
-        }} />
-
-        <div className="absolute right-0 bottom-0 top-0 w-1/2 opacity-10 bg-[radial-gradient(circle_at_bottom_right,#9c724a_0%,transparent_70%)] pointer-events-none" />
-
-        <div className="container relative z-10 text-center max-w-3xl mx-auto">
-          <Award className="h-12 w-12 text-[#b98f5e] mx-auto mb-6 animate-pulse" />
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Partner with an Experienced Winder</h2>
-          <p className="mt-6 text-lg text-[#ccd5df] leading-relaxed">
-            Need a reliable spring manufacturer that understands material stress, elastic load-rates, and cycle-fatigue? Share your specification drawing or call us to receive an immediate quotation.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              Submit Quotation Form
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white text-white text-sm font-extrabold uppercase tracking-wider backdrop-blur-md transition-all duration-300 active:scale-95"
-            >
-              Explore Products
-            </Link>
-          </div>
         </div>
       </section>
     </main>

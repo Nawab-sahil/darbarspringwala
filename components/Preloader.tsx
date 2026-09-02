@@ -56,7 +56,7 @@ export default function Preloader() {
           key="dsw-preloader"
           initial={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className="fixed inset-0 w-screen h-screen min-h-screen z-[999999] flex flex-col items-center justify-center bg-[#17324F] text-white select-none pointer-events-auto overflow-hidden"
         >
           {/* Accessible screen reader status announcement */}
@@ -89,7 +89,7 @@ export default function Preloader() {
                   animate={{ pathLength: 1 }}
                   transition={{
                     duration: shouldReduceMotion ? 0 : 1.1,
-                    ease: [0.65, 0, 0.35, 1],
+                    ease: "easeInOut",
                     repeat: shouldReduceMotion ? 0 : Infinity,
                     repeatType: "reverse",
                   }}
@@ -118,7 +118,7 @@ export default function Preloader() {
                 className="h-full bg-[#9C724A] rounded-full"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 1.6, ease: [0.65, 0, 0.35, 1] }}
+                transition={{ duration: 1.6, ease: "easeInOut" }}
               />
             </div>
           </div>

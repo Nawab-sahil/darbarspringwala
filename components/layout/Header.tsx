@@ -56,7 +56,7 @@ export default function Header() {
       <div
         className={`w-full transition-all duration-300 border-b ${
           scrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-lg border-line/80 py-3"
+            ? "bg-white/95 backdrop-blur-xl shadow-md border-line/80 py-3"
             : "bg-[#f7f5f1]/90 backdrop-blur-md border-line/60 py-4"
         }`}
       >
@@ -73,49 +73,46 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation Links with Framer Active Indicator Pill */}
-          <nav className="hidden lg:flex items-center gap-1.5 rounded-full bg-white/80 p-1.5 border border-line/60 shadow-inner">
+          {/* Desktop Navigation Links with Smooth Active/Hover States */}
+          <nav className="hidden lg:flex items-center gap-1 bg-white/80 p-1.5 rounded-full border border-line/60 shadow-xs">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              const isActive =
+                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-colors duration-200 rounded-full ${
-                    isActive ? "text-white" : "text-[#17324F] hover:text-[#9C724A]"
+                  className={`relative px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 rounded-full focus:outline-none outline-none select-none [-webkit-tap-highlight-color:transparent] ${
+                    isActive
+                      ? "bg-[#9C724A] text-white font-bold shadow-xs"
+                      : "text-[#17324F] hover:text-[#9C724A] hover:bg-[#9C724A]/10"
                   }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeHeaderTab"
-                      className="absolute inset-0 bg-gradient-to-r from-[#17324F] to-[#23496F] rounded-full shadow-md z-0"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{link.label}</span>
+                  <span>{link.label}</span>
                 </Link>
               );
             })}
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Direct Call Button */}
             <Link
               href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-line hover:border-[#9C724A] text-[#17324F] text-xs font-mono font-bold transition-all duration-200 hover:shadow-md"
+              className="inline-flex items-center gap-2 h-10 px-3.5 rounded-xl bg-white border border-line hover:border-[#9C724A] text-[#17324F] text-xs font-mono font-bold transition-all duration-200 hover:shadow-md whitespace-nowrap shrink-0"
             >
-              <Phone className="h-3.5 w-3.5 text-[#9C724A]" />
-              <span>{contactInfo.phone}</span>
+              <Phone className="h-3.5 w-3.5 text-[#9C724A] shrink-0" />
+              <span className="whitespace-nowrap">{contactInfo.phone}</span>
             </Link>
 
             {/* Request Quote Button */}
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs font-extrabold uppercase tracking-wider shadow-md shadow-[#9C724A]/20 transition-all duration-300 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 h-10 px-5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs font-extrabold uppercase tracking-wider shadow-md shadow-[#9C724A]/20 transition-all duration-300 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0"
             >
-              <span>Request Quote</span>
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="whitespace-nowrap">Request Quote</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
             </Link>
           </div>
 

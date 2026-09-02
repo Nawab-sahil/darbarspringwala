@@ -68,57 +68,76 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <main className="flex-1 bg-surface-2">
+    <main className="flex-1 bg-[#f7f9fa]">
       {/* Hero Header */}
       <section className="relative overflow-hidden border-b border-line/50 bg-white py-16 lg:py-24">
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, #17324f 1px, transparent 1px)',
-          backgroundSize: '20px 20px'
-        }} />
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, #17324f 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px'
+          }} 
+        />
 
-        <div className="container relative z-10">
-          <p className="eyebrow font-semibold">Application Scope</p>
-          <h1 className="text-[clamp(34px,5vw,56px)] font-bold text-navy leading-none mt-2">
-            Industries We Serve
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-steel max-w-2xl">
-            We manufacture calibrated coiling components tailored to the operational demands of diverse engineering sectors. From micro-tolerances in electronics to heavy loads in agriculture, we deliver structural reliability.
-          </p>
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <span className="eyebrow block">
+              Application Scope
+            </span>
+            <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
+              Industries We Serve
+            </h1>
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel">
+              We manufacture calibrated coiling components tailored to the operational demands of diverse engineering sectors. From micro-tolerances in electronics to heavy loads in agriculture, we deliver structural reliability.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Grid List */}
-      <section className="section-pad bg-white">
-        <div className="container">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {industries.map((ind, idx) => {
               const IconComp = ind.icon;
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="card-base p-6 bg-surface-2/30 hover:bg-white hover:border-navy hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                  transition={{ duration: 0.4, delay: (idx % 4) * 0.08 }}
+                  className="rounded-2xl border border-line bg-surface-2/30 p-6 hover:bg-white hover:border-[#17324F] hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full group"
                 >
                   <div>
-                    <div className="inline-flex rounded-xl bg-white p-3 text-bronze border border-line shadow-sm">
+                    <div className="inline-flex rounded-xl bg-white p-3 text-[#9C724A] border border-line shadow-xs group-hover:scale-105 transition-transform">
                       <IconComp className="h-5 w-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-navy mt-5 leading-tight">{ind.name}</h3>
-                    <p className="text-xs leading-relaxed text-steel mt-3">{ind.desc}</p>
+                    <h3 className="text-lg font-bold text-[#17324F] font-display mt-5 leading-tight group-hover:text-[#9C724A] transition-colors">
+                      {ind.name}
+                    </h3>
+                    <p className="text-xs leading-relaxed text-steel mt-3 leading-relaxed">
+                      {ind.desc}
+                    </p>
                   </div>
+
                   <div className="mt-6 border-t border-line/50 pt-4 flex flex-col gap-3">
-                    <span className="font-mono text-[9px] font-bold text-bronze uppercase tracking-wider">
+                    <span className="font-mono text-[9px] font-bold text-[#9C724A] uppercase tracking-wider">
                       {ind.spec}
                     </span>
                     <Link 
                       href="/contact" 
-                      className="text-xs font-semibold text-navy hover:text-bronze flex items-center gap-1 transition-colors group"
+                      className="text-xs font-bold text-[#17324F] group-hover:text-[#9C724A] flex items-center gap-1.5 transition-colors"
                     >
-                      Enquire for Industry
-                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                      <span>Enquire for Industry</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </motion.div>
@@ -129,25 +148,39 @@ export default function IndustriesPage() {
       </section>
 
       {/* B2B Technical Consultation CTA */}
-      <section className="section-pad bg-navy text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-          backgroundSize: '24px 24px'
-        }} />
-        <div className="container relative z-10 max-w-3xl mx-auto">
-          <Database className="h-12 w-12 text-bronze-2 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold">Custom Winding Configurations</h2>
-          <p className="mt-4 text-[#ccd5df] leading-relaxed">
-            Have an industry-specific application with unique environmental temperatures, chemical exposures, or high cycle fatiguing? Our design engineers can assist in coiling customized springs for your assemblies.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              Consult an Engineer
-            </Link>
-          </div>
+      <section className="py-16 sm:py-20 bg-[#081423] text-white text-center relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+          style={{
+            backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }} 
+        />
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <Database className="h-10 w-10 text-[#E5C158] mx-auto mb-2" />
+            <h2 className="text-2xl sm:text-4xl font-extrabold font-display">
+              Custom Winding Configurations
+            </h2>
+            <p className="text-sm sm:text-base text-steel-2/90 leading-relaxed max-w-2xl mx-auto">
+              Have an industry-specific application with unique environmental temperatures, chemical exposures, or high cycle fatiguing? Our design engineers can assist in coiling customized springs for your assemblies.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-lg shadow-[#9C724A]/30 transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                <span>Consult an Engineer</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>

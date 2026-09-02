@@ -165,7 +165,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-bronze/30 bg-bronze/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-bronze shadow-sm">
@@ -227,7 +227,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="relative"
           >
             {/* Ambient Background Glow */}

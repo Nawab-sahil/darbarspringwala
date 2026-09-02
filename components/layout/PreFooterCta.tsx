@@ -8,32 +8,35 @@ import { contactInfo } from "../../lib/site";
 
 export default function PreFooterCta() {
   return (
-    <section className="relative bg-[#0d1d2f] py-14 sm:py-20 overflow-hidden text-white border-t border-white/10">
+    <section className="relative bg-[#f7f9fa] py-16 sm:py-24 overflow-hidden border-t border-line/60">
       {/* Ambient technical dot matrix background */}
       <div 
-        className="absolute inset-0 opacity-10 pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, #17324f 1.5px, transparent 1.5px)`,
           backgroundSize: '24px 24px'
         }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[200px] sm:h-[350px] bg-bronze/15 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
       <div className="container relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-          className="relative overflow-hidden rounded-[28px] sm:rounded-[36px] bg-gradient-to-b from-white/10 to-white/5 border border-white/15 p-6 sm:p-12 lg:p-14 backdrop-blur-2xl shadow-[0_24px_80px_rgba(0,0,0,0.4)]"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-[32px] bg-[#081423] border border-[#9C724A]/30 p-8 sm:p-12 lg:p-14 text-white shadow-2xl"
         >
-          {/* Decorative Animated Dashed Concentric Coil Circle Graphic (VISIBLE ON MOBILE & DESKTOP) */}
-          <div className="absolute right-[-30px] top-[-30px] sm:right-[-40px] sm:top-[-40px] opacity-25 pointer-events-none z-0">
+          {/* Ambient Gold Radial Glow */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#9C724A]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#17324F]/40 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Decorative Animated Dashed Concentric Coil Circle Graphic */}
+          <div className="absolute right-[-20px] top-[-20px] sm:right-[-30px] sm:top-[-30px] opacity-20 pointer-events-none z-0">
             <motion.svg
-              width="240"
-              height="240"
+              width="300"
+              height="300"
               viewBox="0 0 200 200"
-              className="w-[220px] h-[220px] sm:w-[360px] sm:h-[360px]"
+              className="w-[240px] h-[240px] sm:w-[360px] sm:h-[360px]"
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             >
@@ -52,34 +55,34 @@ export default function PreFooterCta() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#9C724A]/20 border border-[#9C724A]/40 text-[#E5C158] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9C724A]/20 border border-[#9C724A]/40 text-[#E5C158] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider"
               >
                 <span className="h-2 w-2 rounded-full bg-[#9C724A] animate-pulse" />
                 PRECISION ENGINEERING SINCE 1990
               </motion.div>
 
               {/* Title */}
-              <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-display">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-display">
                 Ready to Elevate Your Production with <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#E5C158] to-[#9C724A]">Custom Springs?</span>
               </h2>
 
               {/* Subtitle */}
-              <p className="text-steel-light text-xs sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-steel-2/90 text-xs sm:text-base leading-relaxed max-w-2xl">
                 Consult directly with Jamnagar&apos;s leading industrial spring engineers. Get high-precision CAD prototyping, certified metallurgy, and custom volume manufacturing quotes within 24 hours.
               </p>
 
               {/* Trust Features Badges */}
               <div className="pt-2 flex flex-wrap gap-4 sm:gap-6 text-[11px] sm:text-xs text-white/80 font-mono">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#9C724A]" />
+                  <ShieldCheck className="h-4 w-4 text-[#9C724A]" />
                   <span>ISO 9001:2015 Certified</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Cpu className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#9C724A]" />
+                  <Cpu className="h-4 w-4 text-[#9C724A]" />
                   <span>CNC Multi-Axis Coiling</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#9C724A]" />
+                  <Award className="h-4 w-4 text-[#9C724A]" />
                   <span>100% Load Tested</span>
                 </div>
               </div>
@@ -89,7 +92,7 @@ export default function PreFooterCta() {
             <div className="lg:col-span-4 flex flex-col gap-3.5 sm:gap-4 pt-2 lg:pt-0">
               <Link
                 href="/contact"
-                className="group relative w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#9C724A] to-[#825B36] text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-[#9C724A]/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-[#9C724A]/40 active:scale-[0.98]"
+                className="group relative w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#9C724A] to-[#825B36] text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-xl shadow-[#9C724A]/25 transition-all duration-300 hover:scale-[1.03] hover:shadow-[#9C724A]/40 active:scale-[0.98]"
               >
                 <span>REQUEST CUSTOM QUOTE</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -97,7 +100,7 @@ export default function PreFooterCta() {
 
               <Link
                 href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase backdrop-blur-md transition-all duration-300 hover:border-white/30"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase backdrop-blur-md transition-all duration-300 hover:border-white/30"
               >
                 <PhoneCall className="h-4 w-4 text-[#9C724A]" />
                 <span>CALL SALES DIRECT</span>
