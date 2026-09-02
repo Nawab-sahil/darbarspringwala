@@ -68,7 +68,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
               alt={product.name}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-contain p-2 mx-auto mix-blend-multiply drop-shadow-md transition-all duration-300 group-hover:drop-shadow-xl"
+              className="object-contain p-2 mx-auto drop-shadow-md transition-all duration-300 group-hover:drop-shadow-xl"
               priority={index < 3}
             />
           </motion.div>

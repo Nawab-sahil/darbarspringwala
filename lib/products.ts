@@ -32,7 +32,7 @@ export const products: Product[] = [
     process:
       "Manufactured on CNC spring-coiling machines with in-line statistical process control and free-length sorting for critical load applications.",
     applications: ["Automobile components", "Consumer hardware", "Writing instruments", "Switches and switchgear", "General industrial assemblies"],
-    images: ["/products/Compression Springs.jpg", "/products/compression-2.png", "/products/compression-3.png"],
+    images: ["/products/Compression Springs.png"],
   },
   {
     slug: "extension-tension-spring",
@@ -47,7 +47,7 @@ export const products: Product[] = [
     process:
       "Coiled and end-formed on precision wire-forming equipment with load testing performed on sample batches for consistent spring rate.",
     applications: ["Agricultural equipment", "Garage door assemblies", "Trampolines", "Automotive components", "Industrial machinery"],
-    images: ["/products/ExtensionTension Springs.jpg"],
+    images: ["/products/ExtensionTension Springs.png"],
   },
   {
     slug: "torsion-spring",
@@ -61,7 +61,7 @@ export const products: Product[] = [
     process:
       "Formed on CNC coilers with leg-angle and torque verification against drawing specification before dispatch.",
     applications: ["Clothes pins and clips", "Hinges", "Automotive levers", "Garage doors", "Electrical switchgear"],
-    images: ["/products/orsion Springs.jpg"],
+    images: ["/products/orsion Springs.png"],
   },
   {
     slug: "conical-spring",
@@ -75,7 +75,7 @@ export const products: Product[] = [
     process:
       "Precision-coiled with pitch and taper angle controlled to specification, then quality-checked for nesting and solid height.",
     applications: ["Vibration mounts", "Seating and upholstery", "Electrical contacts", "Valve assemblies"],
-    images: ["/products/canoniacal.jpg"],
+    images: ["/products/canoniacal.png"],
   },
   {
     slug: "wire-forms",
@@ -89,7 +89,7 @@ export const products: Product[] = [
     process:
       "CNC wire-bending with dimensional verification against customer drawings for tight-tolerance geometry.",
     applications: ["Retail fixtures", "Automotive clips", "Appliance components", "Furniture hardware"],
-    images: ["/products/Wire Forms.jpg"],
+    images: ["/products/Wire Forms.png"],
   },
   {
     slug: "garter-spring",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     process:
       "Coiled, joined, and calibrated for consistent radial force across the full loop diameter.",
     applications: ["Oil seals", "O-rings and gaskets", "Hydraulic seals", "Rotary shaft seals"],
-    images: ["/products/Garter Springs.jpg"],
+    images: ["/products/Garter Springs.png"],
   },
   {
     slug: "spiral-spring",
@@ -116,7 +116,7 @@ export const products: Product[] = [
     finishes: ["Black Oxide", "Zinc Plating", "Powder Coating"],
     process: "Precision flat-strip winding with torque and cycle-life testing to specification.",
     applications: ["Retractable mechanisms", "Timers", "Cable reels", "Consumer devices"],
-    images: ["/products/spiral-spring-1.jpg"],
+    images: ["/products/spiral-spring-1.png"],
   },
   {
     slug: "die-spring",
@@ -129,7 +129,7 @@ export const products: Product[] = [
     finishes: ["Powder Coating", "Black Oxide"],
     process: "Rectangular-wire coiling with load-rating verification and high-cycle fatigue testing.",
     applications: ["Stamping dies", "Injection moulds", "Press tooling", "Heavy machinery"],
-    images: ["/products/Die Springs.jpg"],
+    images: ["/products/Die Springs.png"],
   },
   {
     slug: "custom-spring",
@@ -144,7 +144,7 @@ export const products: Product[] = [
     process:
       "Production planning is aligned to customer requirement, spring type, and application use-case, with quality checks through each stage.",
     applications: ["OEM applications", "Engineering components", "Machinery assemblies", "Industrial equipment"],
-    images: ["/products/Custom Springs.jpg"],
+    images: ["/products/Custom Springs.png"],
   },
 ];
 
