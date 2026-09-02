@@ -11,7 +11,9 @@ export type Product = {
   images: string[];
 };
 
-export type ProductSeoRoute = {
+export type Category = {
+  id: string;
+  name: string;
   seoPath: string;
   productSlug: string;
 };
@@ -21,16 +23,16 @@ export const products: Product[] = [
     slug: "compression-spring",
     name: "Compression Springs",
     shortDescription:
-      "Open-coil springs engineered to resist compressive loads and return to free length.",
+      "Open-coil helical springs engineered to resist axial compressive loads and return to free length.",
     description:
       'Compression springs are engineered to absorb and push back against compressive force in "push mode." Variable pitch between coils reduces solid height and buckling risk while managing load-deflection behaviour.',
     applicationTag: "Load-Bearing Assemblies",
-    materials: ["Stainless Steel", "Carbon Steel", "Alloy Steel", "Music Wire", "Phosphor Bronze"],
+    materials: ["Stainless Steel (302/304/316)", "Carbon Steel", "Alloy Steel", "Music Wire", "Phosphor Bronze"],
     finishes: ["Zinc Plating", "Galvanizing", "Powder Coating", "Black Oxide", "Passivation"],
     process:
       "Manufactured on CNC spring-coiling machines with in-line statistical process control and free-length sorting for critical load applications.",
     applications: ["Automobile components", "Consumer hardware", "Writing instruments", "Switches and switchgear", "General industrial assemblies"],
-    images: ["/products/compression-1.jpg", "/products/compression-2.jpg", "/products/compression-3.jpg"],
+    images: ["/products/Compression Springs.jpg", "/products/compression-2.png", "/products/compression-3.png"],
   },
   {
     slug: "extension-tension-spring",
@@ -45,7 +47,7 @@ export const products: Product[] = [
     process:
       "Coiled and end-formed on precision wire-forming equipment with load testing performed on sample batches for consistent spring rate.",
     applications: ["Agricultural equipment", "Garage door assemblies", "Trampolines", "Automotive components", "Industrial machinery"],
-    images: ["/products/extension-1.jpg", "/products/extension-2.jpg"],
+    images: ["/products/ExtensionTension Springs.jpg"],
   },
   {
     slug: "torsion-spring",
@@ -59,7 +61,7 @@ export const products: Product[] = [
     process:
       "Formed on CNC coilers with leg-angle and torque verification against drawing specification before dispatch.",
     applications: ["Clothes pins and clips", "Hinges", "Automotive levers", "Garage doors", "Electrical switchgear"],
-    images: ["/products/torsion-1.jpg"],
+    images: ["/products/orsion Springs.jpg"],
   },
   {
     slug: "conical-spring",
@@ -73,11 +75,11 @@ export const products: Product[] = [
     process:
       "Precision-coiled with pitch and taper angle controlled to specification, then quality-checked for nesting and solid height.",
     applications: ["Vibration mounts", "Seating and upholstery", "Electrical contacts", "Valve assemblies"],
-    images: ["/products/conical-1.jpg"],
+    images: ["/products/canoniacal.jpg"],
   },
   {
     slug: "wire-forms",
-    name: "Wire Forms",
+    name: "Wire Forms & Clips",
     shortDescription: "Custom-bent wire components engineered to exact geometric specification.",
     description:
       "Wire forms are shaped rather than coiled - clips, brackets, hooks, and retaining components bent to precise geometry.",
@@ -87,7 +89,7 @@ export const products: Product[] = [
     process:
       "CNC wire-bending with dimensional verification against customer drawings for tight-tolerance geometry.",
     applications: ["Retail fixtures", "Automotive clips", "Appliance components", "Furniture hardware"],
-    images: ["/products/wireforms-1.jpg"],
+    images: ["/products/Wire Forms.jpg"],
   },
   {
     slug: "garter-spring",
@@ -101,7 +103,7 @@ export const products: Product[] = [
     process:
       "Coiled, joined, and calibrated for consistent radial force across the full loop diameter.",
     applications: ["Oil seals", "O-rings and gaskets", "Hydraulic seals", "Rotary shaft seals"],
-    images: ["/products/garter-1.jpg"],
+    images: ["/products/Garter Springs.jpg"],
   },
   {
     slug: "spiral-spring",
@@ -114,7 +116,7 @@ export const products: Product[] = [
     finishes: ["Black Oxide", "Zinc Plating", "Powder Coating"],
     process: "Precision flat-strip winding with torque and cycle-life testing to specification.",
     applications: ["Retractable mechanisms", "Timers", "Cable reels", "Consumer devices"],
-    images: ["/products/spiral-1.jpg"],
+    images: ["/products/spiral-spring-1.jpg"],
   },
   {
     slug: "die-spring",
@@ -127,7 +129,7 @@ export const products: Product[] = [
     finishes: ["Powder Coating", "Black Oxide"],
     process: "Rectangular-wire coiling with load-rating verification and high-cycle fatigue testing.",
     applications: ["Stamping dies", "Injection moulds", "Press tooling", "Heavy machinery"],
-    images: ["/products/die-spring-1.jpg"],
+    images: ["/products/Die Springs.jpg"],
   },
   {
     slug: "custom-spring",
@@ -142,16 +144,23 @@ export const products: Product[] = [
     process:
       "Production planning is aligned to customer requirement, spring type, and application use-case, with quality checks through each stage.",
     applications: ["OEM applications", "Engineering components", "Machinery assemblies", "Industrial equipment"],
-    images: ["/products/custom-1.jpg"],
+    images: ["/products/Custom Springs.jpg"],
   },
 ];
 
-export const getProduct = (slug: string) => products.find((product) => product.slug === slug);
-
-export const productSeoRoutes: ProductSeoRoute[] = [
-  { seoPath: "compression-springs", productSlug: "compression-spring" },
-  { seoPath: "extension-springs", productSlug: "extension-tension-spring" },
-  { seoPath: "torsion-springs", productSlug: "torsion-spring" },
-  { seoPath: "wire-forms", productSlug: "wire-forms" },
-  { seoPath: "custom-springs", productSlug: "custom-spring" },
+export const categories: Category[] = [
+  { id: "all", name: "All Products", seoPath: "/products", productSlug: "" },
+  { id: "compression", name: "Compression Springs", seoPath: "/products/compression-spring", productSlug: "compression-spring" },
+  { id: "extension", name: "Extension / Tension", seoPath: "/products/extension-tension-spring", productSlug: "extension-tension-spring" },
+  { id: "torsion", name: "Torsion Springs", seoPath: "/products/torsion-spring", productSlug: "torsion-spring" },
+  { id: "conical", name: "Conical Springs", seoPath: "/products/conical-spring", productSlug: "conical-spring" },
+  { id: "wire-forms", name: "Wire Forms & Clips", seoPath: "/products/wire-forms", productSlug: "wire-forms" },
+  { id: "garter", name: "Garter Springs", seoPath: "/products/garter-spring", productSlug: "garter-spring" },
+  { id: "spiral", name: "Spiral Springs", seoPath: "/products/spiral-spring", productSlug: "spiral-spring" },
+  { id: "die", name: "Die Springs", seoPath: "/products/die-spring", productSlug: "die-spring" },
+  { id: "custom", name: "Custom Springs", seoPath: "/products/custom-spring", productSlug: "custom-spring" },
 ];
+
+export function getProduct(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}

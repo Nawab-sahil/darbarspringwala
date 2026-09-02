@@ -4,7 +4,7 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import StickyMobileCta from "../components/layout/StickyMobileCta";
 import Topbar from "../components/layout/Topbar";
-import Preloader from "../components/motion/Preloader";
+import Preloader from "../components/Preloader";
 import ScrollCoilRail from "../components/motion/ScrollCoilRail";
 import WhatsAppFloat from "../components/layout/WhatsAppFloat";
 import "./globals.css";
