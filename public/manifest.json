@@ -1,0 +1,21 @@
+{
+  "name": "Darbar Springwala | Industrial Spring Manufacturer Jamnagar",
+  "short_name": "Darbar Springwala",
+  "description": "Jamnagar's trusted ISO 9001:2015 certified manufacturer of high-precision Compression, Extension, Torsion & Custom Springs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081423",
+  "theme_color": "#081423",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
