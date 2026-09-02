@@ -23,9 +23,36 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     return {};
   }
 
+  const title = `${product.name} Manufacturer in Jamnagar, Gujarat | Darbar Springwala`;
+  const description = `Custom ${product.name} manufactured by Darbar Springwala in Jamnagar, Gujarat. ${product.shortDescription} ISO 9001:2015 certified. Fast delivery across India.`;
+
   return {
-    title: `${product.name} Manufacturer & Supplier | Darbar Springwala`,
-    description: product.shortDescription || product.description,
+    title,
+    description,
+    keywords: [
+      `${product.name} Manufacturer Jamnagar`,
+      `${product.name} Factory Gujarat`,
+      `${product.name} Supplier Jamnagar`,
+      `Industrial ${product.name} India`,
+      "Darbar Springwala Jamnagar",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `https://www.darbarspringwala.com/products/${product.slug}`,
+      siteName: "Darbar Springwala Jamnagar",
+      locale: "en_IN",
+      type: "website",
+      images: [
+        {
+          url: product.images[0] || "/logo.png",
+          alt: `${product.name} Manufacturer Jamnagar`,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://www.darbarspringwala.com/products/${product.slug}`,
+    },
   };
 }
 
