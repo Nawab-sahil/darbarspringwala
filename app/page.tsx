@@ -611,6 +611,49 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
+      {/* SEO INDUSTRY CONTENT SECTION: JAMNAGAR SPRING FACTORY & SUPPLIER */}
+      {/* ========================================================================= */}
+      <section className="py-20 lg:py-24 border-t border-line/60 bg-white">
+        <div className="container max-w-6xl mx-auto">
+          <div className="rounded-[36px] border border-line/80 bg-surface-2/60 p-8 md:p-14 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-bronze/30 bg-bronze/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-bronze mb-4">
+              JAMNAGAR INDUSTRIAL HUB & GIDC MANUFACTURING
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-navy font-display leading-tight">
+              Premier Spring Manufacturer & Supplier in Jamnagar, Gujarat
+            </h2>
+            <div className="mt-6 grid md:grid-cols-2 gap-8 text-sm sm:text-base leading-relaxed text-steel">
+              <p>
+                Established in 1990 in Jamnagar, Gujarat, <strong>Darbar Springwala</strong> has grown into India&apos;s trusted engineering partner for high-precision <strong>industrial compression springs, extension springs, torsion springs, wire forms, and custom spring components</strong>. Operating from the heart of Gujarat&apos;s brass and industrial engineering cluster in Jamnagar, we manufacture engineered springs conforming to DIN 2095 Grade 1 and ISO 9001:2015 quality standards.
+              </p>
+              <p>
+                Our manufacturing plant features state-of-the-art multi-axis CNC spring coilers, automated heat treatment furnaces, and digital load-testing equipment capable of processing wire diameters from <strong>0.2mm to 16.0mm</strong>. Whether you require OEM bulk spring production for automotive assemblies, electrical switchgear components, valve springs, or custom prototypes built to CAD drawings, Darbar Springwala delivers fast turnaround times across Jamnagar, Rajkot, Ahmedabad, Gujarat, and nationwide across India.
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-line/70 pt-8">
+              <div>
+                <span className="block font-mono text-[10px] font-bold text-bronze uppercase tracking-widest">Location</span>
+                <span className="font-bold text-navy text-sm">Jamnagar GIDC, Gujarat</span>
+              </div>
+              <div>
+                <span className="block font-mono text-[10px] font-bold text-bronze uppercase tracking-widest">Certification</span>
+                <span className="font-bold text-navy text-sm">ISO 9001:2015 Standard</span>
+              </div>
+              <div>
+                <span className="block font-mono text-[10px] font-bold text-bronze uppercase tracking-widest">Wire Range</span>
+                <span className="font-bold text-navy text-sm">0.2mm - 16.0mm Diameter</span>
+              </div>
+              <div>
+                <span className="block font-mono text-[10px] font-bold text-bronze uppercase tracking-widest">Global Supply</span>
+                <span className="font-bold text-navy text-sm">Pan-India & Export Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
       {/* 7. INDUSTRIES SERVED FOOTPRINT */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-28 bg-[#f7f9fa]">
