@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industrial Springs Catalog Jamnagar | Darbar Springwala",
+  title: "Industrial Spring Catalogue Jamnagar | Compression, Torsion & Extension Springs",
   description:
-    "Explore Compression Springs, Extension Springs, Torsion Springs, Conical Springs, Wire Forms & Custom Springs manufactured in Jamnagar, Gujarat by Darbar Springwala.",
+    "Explore Jamnagar's most famous industrial spring catalogue. Precision Compression Springs, Torsion Springs, Extension Springs, Conical Springs, and Wire Forms manufactured by Darbar Springwala in Jamnagar GIDC.",
   keywords: [
-    "Industrial Springs Catalog Jamnagar",
-    "Compression Springs Manufacturer Jamnagar",
-    "Torsion Springs Factory Gujarat",
-    "Wire Forms Jamnagar",
+    "Famous Spring Catalogue Jamnagar",
+    "Spring in Jamnagar",
+    "Compression Spring Manufacturer Jamnagar",
+    "Torsion Spring Supplier Jamnagar",
+    "Extension Springs Factory Jamnagar",
+    "Wire Forms Manufacturer Jamnagar",
+    "Darbar Springwala Catalogue",
   ],
   alternates: {
     canonical: "https://www.darbarspringwala.com/products",

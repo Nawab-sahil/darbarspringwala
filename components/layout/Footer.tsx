@@ -245,34 +245,34 @@ export default function Footer() {
 
             {/* Interactive Spring SVG Banner with Hover Motion */}
             <motion.div
-              className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-5 py-3 cursor-pointer select-none"
+              className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-[2px] px-5 py-3 cursor-pointer select-none"
               onHoverStart={() => setIsCoilHovered(true)}
               onHoverEnd={() => setIsCoilHovered(false)}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
             >
-              <div className="w-12 h-8 flex items-center justify-center">
-                <svg viewBox="0 0 80 30" className="w-full h-full overflow-visible">
+              <div className="w-14 h-8 flex items-center justify-center">
+                <svg viewBox="0 0 90 30" className="w-full h-full overflow-visible">
                   <motion.path
-                    d="M 5 15 Q 15 -5 25 15 Q 35 35 45 15 Q 55 -5 65 15 Q 75 35 80 15"
+                    d="M 5 15 Q 15 -6 25 15 Q 35 36 45 15 Q 55 -6 65 15 Q 75 36 85 15"
                     fill="none"
                     stroke="#9C724A"
-                    strokeWidth="3"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     animate={{
                       d: isCoilHovered
-                        ? "M 5 15 Q 12 5 20 15 Q 28 25 35 15 Q 42 5 50 15 Q 58 25 65 15 Q 72 5 80 15"
-                        : "M 5 15 Q 15 -5 25 15 Q 35 35 45 15 Q 55 -5 65 15 Q 75 35 80 15"
+                        ? "M 5 15 Q 12 2 20 15 Q 28 28 35 15 Q 42 2 50 15 Q 58 28 65 15 Q 72 2 80 15"
+                        : "M 5 15 Q 15 -6 25 15 Q 35 36 45 15 Q 55 -6 65 15 Q 75 36 85 15"
                     }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 18 }}
                   />
                 </svg>
               </div>
               <div className="text-left">
-                <p className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">
-                  Precision Spring Coil Technology
+                <p className="font-mono text-[11px] font-medium text-white uppercase tracking-wider">
+                  Precision Spring Kinematics Engine
                 </p>
-                <p className="text-[10px] text-white/50">
-                  {isCoilHovered ? "Dynamic Load Simulation Applied" : "Hover to test coil compression dynamics"}
+                <p className="text-[10px] text-white/50 font-mono">
+                  {isCoilHovered ? "Dynamic Coil Compression Active" : "Hover to test coil compression dynamics"}
                 </p>
               </div>
             </motion.div>

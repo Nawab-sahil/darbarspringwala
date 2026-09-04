@@ -33,61 +33,46 @@ export default function Button({
 }: ButtonProps) {
   const isPrimary = variant === "primary";
 
-  // Base styling
+  // Base styling with minimum 44px height tap target & 2px sharp corners
   const baseClasses =
-    "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none select-none";
+    "inline-flex items-center justify-center gap-2 rounded-[2px] font-mono text-xs uppercase tracking-wider transition-all duration-120 focus:outline-none disabled:opacity-50 disabled:pointer-events-none select-none min-h-[44px] min-w-[44px] active:scale-[0.98]";
 
   // Size styling
   const sizeClasses =
-    size === "sm" ? "py-2 px-4 text-xs" : "py-3.5 px-7 text-sm";
+    size === "sm" ? "py-2.5 px-4 text-[11px]" : "py-3 px-6 text-xs font-medium";
 
-  // Variant styling
+  // Variant styling matching design system
   const variantClasses = isPrimary
-    ? "bg-[#9C724A] hover:bg-[#b98f5e] text-[#1a1206] shadow-md shadow-[#9C724A]/20 hover:shadow-lg hover:shadow-[#9C724A]/30 font-bold"
-    : "bg-transparent border border-[#e2ded4] hover:border-[#17202B] text-[#17202B]";
+    ? "bg-[#17324F] text-white shadow-xs hover:bg-[#10243b] border border-[#17324F]"
+    : "bg-white border border-[#17324F]/15 hover:border-[#17324F] hover:bg-[#FBFAF7] text-[#17324F]";
 
   const combinedClasses = `${baseClasses} ${sizeClasses} ${variantClasses} ${className}`;
 
-  // Content with animated right arrow on primary variant
   const content = (
     <>
       <span>{children}</span>
       {isPrimary && !hideIcon && (
-        <motion.span
-          whileHover={{ x: 3 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
-          className="inline-flex items-center"
-        >
-          <ArrowRight className={size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4"} />
-        </motion.span>
+        <ArrowRight className="h-3.5 w-3.5 text-[#E5C158]" />
       )}
     </>
   );
 
   if (href) {
     return (
-      <motion.div
-        whileHover={isPrimary ? { y: -2 } : undefined}
-        transition={{ duration: 0.2 }}
-        className="inline-block"
-      >
-        <Link href={href} className={combinedClasses} onClick={onClick}>
-          {content}
-        </Link>
-      </motion.div>
+      <Link href={href} className={combinedClasses} onClick={onClick}>
+        {content}
+      </Link>
     );
   }
 
   return (
-    <motion.button
+    <button
       type={type}
       disabled={disabled}
       onClick={onClick}
-      whileHover={isPrimary ? { y: -2 } : undefined}
-      transition={{ duration: 0.2 }}
       className={combinedClasses}
     >
       {content}
-    </motion.button>
+    </button>
   );
 }

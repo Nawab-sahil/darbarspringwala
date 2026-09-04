@@ -58,7 +58,7 @@ export default function PreFooterCta() {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9C724A]/20 border border-[#9C724A]/40 text-[#E5C158] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider"
               >
                 <span className="h-2 w-2 rounded-full bg-[#9C724A] animate-pulse" />
-                PRECISION ENGINEERING SINCE 1990
+                FAMOUS SPRING MANUFACTURER IN JAMNAGAR SINCE 1990
               </motion.div>
 
               {/* Title */}
@@ -68,7 +68,7 @@ export default function PreFooterCta() {
 
               {/* Subtitle */}
               <p className="text-steel-2/90 text-xs sm:text-base leading-relaxed max-w-2xl">
-                Consult directly with Jamnagar&apos;s leading industrial spring engineers. Get high-precision CAD prototyping, certified metallurgy, and custom volume manufacturing quotes within 24 hours.
+                Consult directly with Jamnagar&apos;s premier industrial spring engineers (Spring Wala in Jamnagar). Get high-precision CAD prototyping, certified metallurgy, and custom volume manufacturing quotes within 24 hours.
               </p>
 
               {/* Trust Features Badges */}

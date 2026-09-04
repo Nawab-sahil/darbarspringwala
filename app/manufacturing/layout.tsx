@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spring Manufacturing Plant Jamnagar | CNC Coiling Factory",
+  title: "Spring Manufacturing Plant Jamnagar | CNC Coiling & Heat Treatment",
   description:
-    "Explore Darbar Springwala's advanced CNC coiling machinery, wire forming equipment, and heat treatment plant in Jamnagar, Gujarat. High precision spring manufacturing.",
+    "State-of-the-art spring manufacturing facility in Jamnagar GIDC, Gujarat. Featuring multi-axis CNC spring coilers, batch tempering furnaces, and 100% load testing for 0.2mm to 16.0mm wire gauge springs.",
   keywords: [
     "Spring Manufacturing Plant Jamnagar",
-    "CNC Coiling Factory Jamnagar",
-    "Heat Treatment Spring Plant Gujarat",
+    "CNC Spring Coiling Jamnagar",
+    "Spring Factory GIDC Jamnagar",
+    "Industrial Spring Heat Treatment Gujarat",
+    "Darbar Springwala Plant",
   ],
   alternates: {
     canonical: "https://www.darbarspringwala.com/manufacturing",

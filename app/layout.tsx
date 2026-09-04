@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
+import { Fraunces, JetBrains_Mono } from "next/font/google";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import StickyMobileCta from "../components/layout/StickyMobileCta";
@@ -9,47 +9,48 @@ import ScrollCoilRail from "../components/motion/ScrollCoilRail";
 import WhatsAppFloat from "../components/layout/WhatsAppFloat";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const plexMono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.darbarspringwala.com"),
   title: {
-    default: "Darbar Springwala | Industrial Spring Manufacturer in Jamnagar, Gujarat",
+    default: "Darbar Springwala | Famous Spring Manufacturer in Jamnagar, Gujarat",
     template: "%s | Darbar Springwala Jamnagar",
   },
   description:
-    "Darbar Springwala is Jamnagar's premier ISO 9001:2015 certified industrial spring manufacturer & supplier. Producing precision Compression Springs, Extension Springs, Torsion Springs, Conical Springs, Wire Forms, and Custom Engineering Springs in Jamnagar, Gujarat since 1990.",
+    "Darbar Springwala is the most famous spring manufacturer in Jamnagar, Gujarat. ISO 9001:2015 certified factory producing precision Compression Springs, Extension Springs, Torsion Springs, Conical Springs, Wire Forms, and Custom Springs in Jamnagar since 1990.",
   keywords: [
-    "Spring Manufacturer Jamnagar",
+    "Famous Spring in Jamnagar",
+    "Famous Spring Manufacturer in Jamnagar",
+    "Best Spring in Jamnagar",
+    "Spring in Jamnagar",
     "Spring Manufacturer in Jamnagar",
     "Spring Factory Jamnagar Gujarat",
-    "Compression Springs Manufacturer Jamnagar",
-    "Torsion Springs Supplier Jamnagar",
-    "Extension Springs Factory Jamnagar",
+    "Spring Wala in Jamnagar",
+    "Darbar Springwala Jamnagar",
+    "Compression Spring Manufacturer Jamnagar",
+    "Torsion Spring Supplier Jamnagar",
+    "Extension Spring Factory Jamnagar",
     "Wire Forms Manufacturer Jamnagar",
     "Custom Springs Manufacturer Gujarat",
     "Industrial Spring Suppliers Jamnagar",
-    "Darbar Springwala Jamnagar",
-    "Spring Manufacturers near GIDC Jamnagar",
+    "GIDC Spring Manufacturer Jamnagar",
   ],
   authors: [{ name: "Darbar Springwala", url: "https://www.darbarspringwala.com" }],
-  creator: "Nawab Sahil",
+  creator: "Darbar Springwala",
   publisher: "Darbar Springwala",
   category: "Industrial Manufacturing",
   robots: {
@@ -64,9 +65,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Darbar Springwala | Industrial Spring Manufacturer in Jamnagar",
+    title: "Darbar Springwala | Famous Spring Manufacturer in Jamnagar",
     description:
-      "Jamnagar's trusted ISO 9001:2015 certified manufacturer of high-precision Compression, Extension, Torsion & Custom Springs.",
+      "Jamnagar's most famous ISO 9001:2015 certified manufacturer of precision Compression, Extension, Torsion & Custom Springs since 1990.",
     url: "https://www.darbarspringwala.com",
     siteName: "Darbar Springwala Jamnagar",
     locale: "en_IN",
@@ -76,15 +77,15 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 800,
         height: 600,
-        alt: "Darbar Springwala Industrial Spring Manufacturer Jamnagar",
+        alt: "Darbar Springwala Famous Spring Manufacturer Jamnagar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Darbar Springwala | Spring Manufacturer Jamnagar",
+    title: "Darbar Springwala | Famous Spring Manufacturer in Jamnagar",
     description:
-      "Precision Compression, Extension & Torsion Springs manufactured in Jamnagar, Gujarat, India.",
+      "Famous Spring Manufacturer in Jamnagar, Gujarat. Precision Compression, Extension & Torsion Springs manufactured since 1990.",
     images: ["/logo.png"],
   },
   alternates: {
@@ -106,9 +107,13 @@ const jsonLd = {
   "@type": "LocalBusiness",
   "@id": "https://www.darbarspringwala.com/#organization",
   name: "Darbar Springwala",
-  alternateName: "Darbar Springwala Jamnagar Spring Factory",
+  alternateName: [
+    "Famous Spring Manufacturer in Jamnagar",
+    "Darbar Springwala Jamnagar Spring Factory",
+    "Spring Wala in Jamnagar"
+  ],
   description:
-    "Leading ISO 9001:2015 certified industrial spring manufacturer in Jamnagar, Gujarat, India. Specializing in Compression Springs, Extension Springs, Torsion Springs, Wire Forms, and Custom Springs.",
+    "Famous spring manufacturer in Jamnagar, Gujarat, India. ISO 9001:2015 certified factory producing Compression Springs, Extension Springs, Torsion Springs, Wire Forms, and Custom Industrial Springs since 1990.",
   url: "https://www.darbarspringwala.com",
   telephone: "+919904212117",
   email: "darbarspringwala@gmail.com",
@@ -144,30 +149,30 @@ const jsonLd = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Industrial Spring Manufacturing Catalog Jamnagar",
+    name: "Famous Industrial Spring Manufacturing Catalog Jamnagar",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Compression Springs Jamnagar",
-          description: "Open-coil helical springs engineered to resist axial compressive loads.",
+          name: "Compression Springs in Jamnagar",
+          description: "Open-coil helical springs manufactured in Jamnagar, Gujarat.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Torsion Springs Jamnagar",
-          description: "Rotational spring components formed on CNC coilers.",
+          name: "Torsion Springs in Jamnagar",
+          description: "Rotational spring components formed on multi-axis CNC coilers in Jamnagar.",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Custom Springs Jamnagar",
-          description: "Application-specific spring solutions developed to exact drawing specifications.",
+          name: "Custom Springs in Jamnagar",
+          description: "Application-specific spring solutions developed to exact drawing specifications in Jamnagar.",
         },
       },
     ],
@@ -178,7 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <head>
         <link rel="icon" href="/icon.png" type="image/png" />

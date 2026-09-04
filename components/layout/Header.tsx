@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Phone, Mail, Clock, ArrowRight, ShieldCheck } from "lucide-react";
 import MobileNav from "./MobileNav";
+import MagneticButton from "../motion/MagneticButton";
 import logo from "@/public/logo.png";
 import { navLinks, contactInfo } from "../../lib/site";
 
@@ -73,8 +74,8 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation Links with Smooth Active/Hover States */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/80 p-1.5 rounded-full border border-line/60 shadow-xs">
+          {/* Desktop Navigation Links with Smooth Active/Hover States & Animated Underline */}
+          <nav className="hidden lg:flex items-center gap-1 bg-white/80 p-1.5 rounded-[2px] border border-[#17324F]/15 shadow-xs">
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
@@ -83,13 +84,16 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 rounded-full focus:outline-none outline-none select-none [-webkit-tap-highlight-color:transparent] ${
+                  className={`group relative px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-colors duration-120 rounded-[2px] focus:outline-none select-none ${
                     isActive
-                      ? "bg-[#9C724A] text-white font-bold shadow-xs"
-                      : "text-[#17324F] hover:text-[#9C724A] hover:bg-[#9C724A]/10"
+                      ? "bg-[#17324F] text-white font-medium"
+                      : "text-[#17324F] hover:text-[#9C724A]"
                   }`}
                 >
                   <span>{link.label}</span>
+                  {!isActive && (
+                    <span className="absolute bottom-1 left-4 right-4 h-[1.5px] bg-[#9C724A] origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100" />
+                  )}
                 </Link>
               );
             })}
@@ -100,20 +104,22 @@ export default function Header() {
             {/* Direct Call Button */}
             <Link
               href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 h-10 px-3.5 rounded-xl bg-white border border-line hover:border-[#9C724A] text-[#17324F] text-xs font-mono font-bold transition-all duration-200 hover:shadow-md whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 h-10 px-3.5 rounded-[2px] bg-white border border-[#17324F]/15 hover:border-[#17324F] text-[#17324F] text-xs font-mono font-medium transition-all duration-120 whitespace-nowrap shrink-0"
             >
               <Phone className="h-3.5 w-3.5 text-[#9C724A] shrink-0" />
               <span className="whitespace-nowrap">{contactInfo.phone}</span>
             </Link>
 
-            {/* Request Quote Button */}
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 h-10 px-5 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs font-extrabold uppercase tracking-wider shadow-md shadow-[#9C724A]/20 transition-all duration-300 hover:scale-105 active:scale-95 whitespace-nowrap shrink-0"
-            >
-              <span className="whitespace-nowrap">Request Quote</span>
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
-            </Link>
+            {/* Magnetic Primary Request Quote Button */}
+            <MagneticButton>
+              <Link
+                href="/contact"
+                className="btn-primary flex items-center gap-2 h-10 px-5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
+              >
+                <span>Request Quote</span>
+                <ArrowRight className="h-3.5 w-3.5 text-[#E5C158]" />
+              </Link>
+            </MagneticButton>
           </div>
 
           {/* Mobile Drawer Trigger */}

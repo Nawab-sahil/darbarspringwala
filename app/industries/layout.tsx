@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industries Served | Spring Supplier Jamnagar Gujarat",
+  title: "Industries Served | Famous Spring Supplier in Jamnagar",
   description:
-    "Darbar Springwala supplies precision springs to Automotive, Electrical, Agricultural, Medical, and Heavy Machinery industries across Jamnagar, Gujarat, and India.",
+    "Darbar Springwala supplies precision springs to automotive, electrical switchgear, industrial valve, hydraulic, and agricultural OEM machinery sectors in Jamnagar, Gujarat, and across India.",
   keywords: [
-    "Automotive Springs Manufacturer Jamnagar",
-    "Electrical Springs Factory Gujarat",
-    "Agricultural Springs Jamnagar",
+    "Automotive Springs Jamnagar",
+    "Switchgear Springs Supplier Jamnagar",
+    "Valve Springs Factory Gujarat",
+    "Industrial Springs Jamnagar",
+    "Darbar Springwala OEM Supply",
   ],
   alternates: {
     canonical: "https://www.darbarspringwala.com/industries",

@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/GeneralSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/GeneralSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/GeneralSans-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #17202b;
   --navy: #17324f;
@@ -18,6 +42,8 @@
   --ok: #4a7a5e;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --container: 1280px;
+
+  --font-body-stack: 'General Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @theme inline {
@@ -34,26 +60,44 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --font-display: var(--font-display);
-  --font-body: var(--font-body);
+  --font-body: var(--font-body-stack);
   --font-mono: var(--font-mono);
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-body-stack);
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
   background-image:
     radial-gradient(circle at 18% 8%, rgba(156, 114, 74, 0.1), transparent 30%),
     radial-gradient(circle at 85% 15%, rgba(35, 73, 111, 0.08), transparent 34%),
     linear-gradient(180deg, #f7f5f1 0%, #f4f0e8 100%);
 }
 
-h1,
-h2,
+h1 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
 h3,
 h4 {
-  font-family: var(--font-display), sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .container {
@@ -61,30 +105,25 @@ h4 {
   margin-inline: auto;
 }
 
-/* Universal Rounded Capsule Eyebrow Badge with Dot */
+/* Precision Technical Eyebrow Badge with 22x1px Bronze Rule */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 14px;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  background: rgba(156, 114, 74, 0.08);
-  border: 1px solid rgba(156, 114, 74, 0.3);
   color: var(--bronze);
   font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .eyebrow::before {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 22px;
+  height: 1px;
   background: var(--bronze);
   flex-shrink: 0;
 }
@@ -99,10 +138,11 @@ h4 {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-family: var(--font-body-stack);
   font-weight: 600;
   font-size: 14.5px;
   letter-spacing: 0.01em;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: all 0.25s var(--ease);
 }
 
@@ -114,8 +154,7 @@ h4 {
 
 .btn-primary:hover {
   background: var(--bronze-2);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(156, 114, 74, 0.3);
+  box-shadow: 0 8px 20px rgba(156, 114, 74, 0.25);
 }
 
 .btn-secondary {
@@ -125,14 +164,20 @@ h4 {
 }
 
 .btn-secondary:hover {
-  border-color: var(--bronze);
-  color: var(--bronze);
+  border-color: var(--navy);
+  color: var(--navy);
 }
 
 .card-base {
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  border: 1px solid rgba(23, 50, 79, 0.15);
+  border-radius: 2px;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.card-base:hover {
+  border-color: var(--navy);
+  background-color: #FBFAF7;
 }
 
 .hero-panel {

@@ -68,16 +68,16 @@ export default function QualityPage() {
 
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="eyebrow block">
-              Zero Defect Winding
-            </span>
-            <h1 className="text-[clamp(34px,5vw,56px)] font-black text-[#17324F] leading-tight mt-2 font-display">
-              ISO 9001:2015 Quality Assurance & Testing in Jamnagar
+            <div className="eyebrow">
+              № 01 — ZERO DEFECT WINDING
+            </div>
+            <h1 className="text-[clamp(32px,4vw,52px)] font-semibold text-[#17324F] leading-tight mt-2 font-display">
+              ISO 9001:2015 Quality Assurance & <em className="italic font-normal text-bronze">Testing in Jamnagar</em>
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-steel max-w-xl">
               At our Jamnagar spring manufacturing facility, quality control is integrated into every CNC coiling step. We verify spring load rates, wire tolerances, and fatigue limits to deliver zero-defect industrial springs.
@@ -89,7 +89,7 @@ export default function QualityPage() {
                   e.preventDefault();
                   alert("Capability Profile download is initialized. Mock PDF generated successfully.");
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#9C724A] to-[#825B36] hover:from-[#825B36] hover:to-[#6c4a2a] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md shadow-[#9C724A]/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                className="btn-primary"
               >
                 <FileDown className="h-4 w-4" />
                 <span>Download Capability Profile PDF</span>
@@ -101,14 +101,15 @@ export default function QualityPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl border border-line p-6 bg-gradient-to-br from-white via-white to-[#f4eee4] shadow-md space-y-4"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-[2px] border border-[#17324F]/15 p-[22px] bg-white space-y-4"
           >
-            <h3 className="font-bold text-[#17324F] text-lg font-display">Material Grade Compliance</h3>
+            <div className="w-6 h-[1px] bg-[#9C724A]" />
+            <h3 className="font-display font-medium text-[#17324F] text-lg">Material Grade Compliance</h3>
             <p className="text-xs text-steel">We wound custom springs strictly to Indian, American, and European material standards:</p>
-            <ul className="space-y-2.5 pt-1">
+            <ul className="space-y-2 pt-1">
               {standards.map((std, i) => (
-                <li key={i} className="flex items-center gap-2 font-mono text-[11px] text-steel-2 font-bold uppercase tracking-wide">
+                <li key={i} className="flex items-center gap-2 font-mono text-[11px] text-steel-2 font-medium uppercase tracking-wide">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#9C724A] shrink-0" />
                   {std}
                 </li>
@@ -122,15 +123,15 @@ export default function QualityPage() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="eyebrow block">
-              Our Laboratory
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#17324F] font-display mt-2">
+            <div className="eyebrow">
+              № 02 — OUR LABORATORY
+            </div>
+            <h2 className="text-[clamp(28px,3.2vw,42px)] font-semibold text-[#17324F] font-display mt-2">
               Equipped for Calibrated Verification
             </h2>
             <p className="mt-4 text-steel text-sm sm:text-base leading-relaxed">
@@ -138,21 +139,21 @@ export default function QualityPage() {
             </p>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-3.5">
             {equipment.map((eq, idx) => (
               <motion.div 
                 key={idx} 
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.06 }}
-                className="flex gap-4 p-5 rounded-2xl border border-line bg-surface-2/30 hover:bg-white hover:shadow-md transition-all"
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                className="flex gap-4 p-[22px] rounded-[2px] border border-[#17324F]/15 bg-white transition-all duration-120 hover:border-[#17324F] hover:bg-[#FBFAF7]"
               >
-                <div className="rounded-xl bg-[#17324F]/5 p-2.5 text-[#17324F] h-10 w-10 flex items-center justify-center shrink-0">
+                <div className="rounded-[2px] bg-[#17324F]/5 p-2.5 text-[#17324F] h-10 w-10 flex items-center justify-center shrink-0">
                   <Settings2 className="h-5 w-5 text-[#9C724A]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-[#17324F]">{eq.name}</h4>
+                  <h4 className="font-display font-medium text-sm text-[#17324F]">{eq.name}</h4>
                   <p className="text-xs text-steel mt-1 leading-relaxed">{eq.use}</p>
                 </div>
               </motion.div>
@@ -165,16 +166,16 @@ export default function QualityPage() {
       <section className="py-16 sm:py-20 border-t border-line/60 bg-surface">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div 
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center"
           >
-            <span className="eyebrow">
-              Workflow
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#17324F] font-display mt-2">
+            <div className="eyebrow mx-auto">
+              № 03 — WORKFLOW
+            </div>
+            <h2 className="text-[clamp(28px,3.2vw,42px)] font-semibold text-[#17324F] font-display mt-2">
               Quality Control Inspection Gates
             </h2>
             <p className="mt-3 text-steel text-sm leading-relaxed">
@@ -186,21 +187,26 @@ export default function QualityPage() {
             {qcSteps.map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
-                className="rounded-2xl border border-line bg-white p-6 hover:border-[#17324F] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                transition={{ duration: 0.4, delay: (idx % 3) * 0.06 }}
+                className="rounded-[2px] border border-[#17324F]/15 bg-white p-[22px] transition-all duration-120 hover:border-[#17324F] hover:bg-[#FBFAF7] flex flex-col justify-between group"
               >
                 <div>
-                  <span className="font-mono text-[9px] font-bold text-[#9C724A] uppercase tracking-widest bg-[#9C724A]/10 px-2.5 py-1 rounded-md">
-                    {step.tag}
-                  </span>
-                  <h3 className="text-lg font-bold text-[#17324F] font-display mt-5 group-hover:text-[#9C724A] transition-colors">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-mono text-[10px] font-medium text-[#9C724A] uppercase tracking-widest bg-[#9C724A]/10 px-2 py-0.5 rounded-[2px]">
+                      {step.tag}
+                    </span>
+                    <span className="font-mono text-[11px] font-medium text-[#9C724A]/60">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="w-6 h-[1px] bg-[#9C724A] mb-2" />
+                  <h3 className="font-display font-medium text-[18px] text-[#17324F] group-hover:text-[#9C724A] transition-colors duration-120">
                     {step.title}
                   </h3>
-                  <p className="text-xs leading-relaxed text-steel mt-2 leading-relaxed">
+                  <p className="text-xs leading-relaxed text-steel mt-2">
                     {step.desc}
                   </p>
                 </div>
